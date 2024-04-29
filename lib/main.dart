@@ -1,3 +1,5 @@
+
+import 'package:coffee_app/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp();
 
   @override
   Widget build(BuildContext context) {
@@ -33,50 +35,79 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Stack(fit: StackFit.expand, children: [
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/image/coffee1.png'),
-              alignment: Alignment.topCenter,
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-          child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-            const Text(
-              'Coffee so good, your taste buds will love it.',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 34,
-                  fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const Text(
-              'The best grain,  the finest roast, the  powerful flavor.',
-              style: TextStyle(
-                  color: Color.fromRGBO(169, 169, 169, 1),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400),
-              textAlign: TextAlign.center,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(198, 124, 78, 1),
-                  fixedSize: const Size(315, 62),
-                  textStyle: const TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Sora',
-                  )),
-              child: const Text(
-                'Get Started',
-              ),
-            )
-          ]),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+        const FractionallySizedBox(
+          alignment: Alignment.topCenter,
+          widthFactor: 1.1, 
+          heightFactor: 2/3,
+          child: Image(
+                image: AssetImage('assets/image/coffee1.png',),
+                fit: BoxFit.fitWidth,
+              ) 
         ),
-        //  висота екрану
-      ]),
-    );
+        
+
+        Align(alignment: AlignmentDirectional.bottomCenter,
+          child: 
+
+          Container( decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              stops: [
+                0.35, 0.4
+              ],
+              colors: [
+                Color.fromRGBO(0, 0, 0, 1),
+                Color.fromRGBO(0, 0, 0, 0)])),
+                child: 
+
+        Column(
+          
+
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      
+                      
+                      Padding(padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16), child: Text(
+                        'Coffee so good, your taste buds will love it.',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 34,
+                            fontFamily: 'Sora',
+                            fontWeight: FontWeight.w600),
+                        textAlign: TextAlign.center,
+                      ),),
+                      Padding(padding: const EdgeInsets.symmetric(horizontal: 30), child: Text(
+                        'The best grain,  the finest roast, the \n powerful flavor.',
+                        style: TextStyle(
+                            color: Color.fromRGBO(169, 169, 169, 1),
+                            fontSize: 14,
+                            fontFamily: 'Sora',
+                            fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.center,
+                      ),),
+                      Padding(padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 34), child: 
+                       ElevatedButton(
+                        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));},
+                        child: const Text(
+                          'Get Started', style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Sora',),),
+                          style: ButtonStyle( 
+                            foregroundColor: MaterialStateProperty.all(Color(0xFFFFFFFFF)),
+                            backgroundColor: MaterialStateProperty.all(Color.fromRGBO(198, 124, 78, 1), ),
+                            minimumSize: MaterialStatePropertyAll(Size(double.infinity,62)),
+                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),),
+                            ),
+                      ))
+      )])))]));
+          
+      
+  
   }
 }
