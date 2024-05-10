@@ -1,6 +1,6 @@
 name: coffee_app
 
-description: "A new Flutter project."
+description: " My First futter app, for portfolio only"
 
 publish_to: 'none' 
 
@@ -9,22 +9,22 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.3.1 <4.0.0'
 
-
 dependencies:
   flutter:
     sdk: flutter
-
-  
+ 
   cupertino_icons: ^1.0.6
 
   google_fonts: ^6.2.1
+
+  flutter_rating_bar: ^4.0.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^3.0.0
-
 
 flutter:
   uses-material-design: true
