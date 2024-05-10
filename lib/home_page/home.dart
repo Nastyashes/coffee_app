@@ -5,7 +5,7 @@ import 'package:coffee_app/home_page/tabbar_coffee/capuchino.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/espresso.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/latte.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/machiato.dart';
-import 'navbar.dart';
+import 'naw_bar/navbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
