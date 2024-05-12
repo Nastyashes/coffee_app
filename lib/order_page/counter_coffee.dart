@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 
 class CoffeeCount extends StatefulWidget {
   const CoffeeCount({super.key});
@@ -34,15 +34,15 @@ class CoffeeCountState extends State<CoffeeCount> {
                 onPressed: decrement,
                 style: OutlinedButton.styleFrom(
                   
-                  padding: EdgeInsets.all(0),
-                  fixedSize: Size.fromRadius(16),
-                  shape: CircleBorder(),
-                  side: BorderSide(
+                  padding: const EdgeInsets.all(0),
+                  fixedSize: const Size.fromRadius(16),
+                  shape: const CircleBorder(),
+                  side: const BorderSide(
                     color: Color.fromRGBO(234, 234, 234, 1),
                     width: 1,
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.remove,
                   color: Color.fromRGBO(47, 45, 44, 1),
                   size: 16,
@@ -54,15 +54,15 @@ class CoffeeCountState extends State<CoffeeCount> {
             OutlinedButton(
                 onPressed: increment,
                 style: OutlinedButton.styleFrom(
-                  padding: EdgeInsets.all(0),
-                  fixedSize: Size.fromRadius(16),
-                  shape: CircleBorder(),
-                  side: BorderSide(
+                  padding: const EdgeInsets.all(0),
+                  fixedSize: const Size.fromRadius(16),
+                  shape: const CircleBorder(),
+                  side: const BorderSide(
                     color: Color.fromRGBO(234, 234, 234, 1),
                     width: 1,
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.add,
                   color: Color.fromRGBO(47, 45, 44, 1),
                   size: 16,

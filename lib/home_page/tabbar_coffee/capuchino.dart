@@ -1,11 +1,14 @@
+import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/home_page/like_star.dart';
 import 'package:flutter/material.dart';
 
 class Cappuccino extends StatelessWidget {
   const Cappuccino({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-        crossAxisCount: 2, // Кількість елементів у рядку
+        crossAxisCount: 2,
         childAspectRatio: 149 / 239,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
@@ -19,33 +22,15 @@ class Cappuccino extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                      alignment: Alignment.topLeft,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              image: AssetImage('assets/image/Cappucino1.png'),
-                              fit: BoxFit.fitHeight),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: TextButton.icon(
-                          style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero),
-                              backgroundColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(0, 0, 0, 0.16)),
-                              textStyle: MaterialStatePropertyAll(TextStyle(
-                                  fontFamily: 'Sora',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600)),
-                              iconColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(251, 190, 33, 1)),
-                              iconSize: MaterialStatePropertyAll(10)),
-                          onPressed: () {Navigator.pushNamed(context, '/like');},
-                          icon: const Icon(Icons.star),
-                          label: const Text('4.8',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ))),
-                    )),
+                            alignment: Alignment.topLeft,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/image/Cappucino1.png'),
+                                    fit: BoxFit.fitHeight),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const LikeStarButton())),
                     const SizedBox(
                       height: 10,
                     ),
@@ -71,8 +56,8 @@ class Cappuccino extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
                         child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,7 +73,8 @@ class Cappuccino extends StatelessWidget {
                               Container(
                                 width: 32,
                                 decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(198, 124, 78, 1),
+                                    color:
+                                        const Color.fromRGBO(198, 124, 78, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: IconButton(
                                     visualDensity:
@@ -97,7 +83,19 @@ class Cappuccino extends StatelessWidget {
                                         iconColor: MaterialStatePropertyAll(
                                             Colors.white)),
                                     iconSize: 16,
-                                    onPressed: () {Navigator.pushNamed(context, '/detail');},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/detail',
+                                          arguments: Coffee(
+                                              name: 'Cappuccino',
+                                              whith: 'With Chocolate',
+                                              priseS: '4,23',
+                                              priseM: '4,53',
+                                              priseL: '4,73',
+                                              description:
+                                                  'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo..',
+                                              imageAsset:
+                                                  'assets/image/Cappucino1.png'));
+                                    },
                                     icon: const Icon(Icons.add)),
                               )
                             ]))
@@ -112,33 +110,15 @@ class Cappuccino extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                      alignment: Alignment.topLeft,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              image: AssetImage('assets/image/Cappucino2.png'),
-                              fit: BoxFit.fitHeight),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: TextButton.icon(
-                          style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero),
-                              backgroundColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(0, 0, 0, 0.16)),
-                              textStyle: MaterialStatePropertyAll(TextStyle(
-                                  fontFamily: 'Sora',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600)),
-                              iconColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(251, 190, 33, 1)),
-                              iconSize: MaterialStatePropertyAll(10)),
-                          onPressed: () {},
-                          icon: const Icon(Icons.star),
-                          label: const Text('4.9',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ))),
-                    )),
+                            alignment: Alignment.topLeft,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/image/Cappucino2.png'),
+                                    fit: BoxFit.fitHeight),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const LikeStarButton())),
                     const SizedBox(
                       height: 10,
                     ),
@@ -164,8 +144,8 @@ class Cappuccino extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
                         child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,7 +161,8 @@ class Cappuccino extends StatelessWidget {
                               Container(
                                 width: 32,
                                 decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(198, 124, 78, 1),
+                                    color:
+                                        const Color.fromRGBO(198, 124, 78, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: IconButton(
                                     visualDensity:
@@ -190,7 +171,9 @@ class Cappuccino extends StatelessWidget {
                                         iconColor: MaterialStatePropertyAll(
                                             Colors.white)),
                                     iconSize: 16,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/detail');
+                                    },
                                     icon: const Icon(Icons.add)),
                               )
                             ]))
@@ -205,33 +188,15 @@ class Cappuccino extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                      alignment: Alignment.topLeft,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              image: AssetImage('assets/image/Cappucino3.png'),
-                              fit: BoxFit.fitHeight),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: TextButton.icon(
-                          style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero),
-                              backgroundColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(0, 0, 0, 0.16)),
-                              textStyle: MaterialStatePropertyAll(TextStyle(
-                                  fontFamily: 'Sora',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600)),
-                              iconColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(251, 190, 33, 1)),
-                              iconSize: MaterialStatePropertyAll(10)),
-                          onPressed: () {},
-                          icon: const Icon(Icons.star),
-                          label: const Text('4.8',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ))),
-                    )),
+                            alignment: Alignment.topLeft,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/image/Cappucino3.png'),
+                                    fit: BoxFit.fitHeight),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const LikeStarButton())),
                     const SizedBox(
                       height: 10,
                     ),
@@ -257,8 +222,8 @@ class Cappuccino extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
                         child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -274,7 +239,8 @@ class Cappuccino extends StatelessWidget {
                               Container(
                                 width: 32,
                                 decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(198, 124, 78, 1),
+                                    color:
+                                        const Color.fromRGBO(198, 124, 78, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: IconButton(
                                     visualDensity:
@@ -283,13 +249,13 @@ class Cappuccino extends StatelessWidget {
                                         iconColor: MaterialStatePropertyAll(
                                             Colors.white)),
                                     iconSize: 16,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/detail');
+                                    },
                                     icon: const Icon(Icons.add)),
                               )
                             ]))
                   ])),
-          
-          
           Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -300,33 +266,15 @@ class Cappuccino extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Container(
-                      alignment: Alignment.topLeft,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              image: AssetImage('assets/image/Cappucino4.png'),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: TextButton.icon(
-                          style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero),
-                              backgroundColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(0, 0, 0, 0.16)),
-                              textStyle: MaterialStatePropertyAll(TextStyle(
-                                  fontFamily: 'Sora',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600)),
-                              iconColor: MaterialStatePropertyAll(
-                                  Color.fromRGBO(251, 190, 33, 1)),
-                              iconSize: MaterialStatePropertyAll(10)),
-                          onPressed: () {},
-                          icon: const Icon(Icons.star),
-                          label: const Text('4.9',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ))),
-                    )),
+                            alignment: Alignment.topLeft,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/image/Cappucino4.png'),
+                                    fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const LikeStarButton())),
                     const SizedBox(
                       height: 10,
                     ),
@@ -352,8 +300,8 @@ class Cappuccino extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
                         child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -369,7 +317,8 @@ class Cappuccino extends StatelessWidget {
                               Container(
                                 width: 32,
                                 decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(198, 124, 78, 1),
+                                    color:
+                                        const Color.fromRGBO(198, 124, 78, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: IconButton(
                                     visualDensity:
@@ -378,7 +327,9 @@ class Cappuccino extends StatelessWidget {
                                         iconColor: MaterialStatePropertyAll(
                                             Colors.white)),
                                     iconSize: 16,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/detail');
+                                    },
                                     icon: const Icon(Icons.add)),
                               )
                             ]))

@@ -1,4 +1,3 @@
-import 'package:coffee_app/home_page/home.dart';
 import 'package:flutter/material.dart';
 
 import 'routes.dart';
@@ -43,7 +42,7 @@ class MyHomePage extends StatelessWidget {
               heightFactor: 2 / 3,
               child: Image(
                 image: AssetImage(
-                  'assets/image/coffee1.png',
+                  'assets/image/CoffeeStart.png',
                 ),
                 fit: BoxFit.fitWidth,
               )),
@@ -95,12 +94,7 @@ class MyHomePage extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 34),
                             child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const Home()));
-                                },
+                                onPressed: () {Navigator.pushNamed(context, '/home');},
                                 style: ButtonStyle(
                                   foregroundColor: MaterialStateProperty.all(
                                       const Color.fromRGBO(255, 255, 255, 1)),

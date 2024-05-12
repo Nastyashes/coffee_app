@@ -1,41 +1,32 @@
-
 import 'package:flutter/material.dart';
-
-import 'package:coffee_app/order_page/order_page.dart';
-
-
-
 
 class Few extends StatelessWidget {
   const Few({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: const Text('Like Coffee'),
       ),
       body: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Coffee Card')
-            ],
+            children: <Widget>[Text('Coffee Card')],
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => OrderPage()),
-              );
+              Navigator.pushNamed(context, '/order');
             },
             child: const Text('Order'),
           ),
-          
         ],
       ),
     );

@@ -8,7 +8,7 @@ import 'package:coffee_app/home_page/tabbar_coffee/machiato.dart';
 import 'naw_bar/navbar.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => HomeState();
@@ -69,7 +69,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             ),
                           ),
                           onChanged: (value) {
-                            // Обробка змін у рядку пошуку
+                            
                           },
                         ),
                       ),
@@ -83,7 +83,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           borderRadius: BorderRadius.circular(14),
                           image: const DecorationImage(
                             image: AssetImage(
-                              'assets/image/user.png',
+                              'assets/image/User.png',
                             ),
                           ),
                         ),
@@ -133,7 +133,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         image: const DecorationImage(
-                          image: AssetImage('assets/image/promo.png'),
+                          image: AssetImage('assets/image/Promo.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
