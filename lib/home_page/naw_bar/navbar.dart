@@ -30,7 +30,7 @@ class NavigationPageState extends State<NavigationPage> {
             Navigator.pushNamed(context, '/few');
             break;
           case 2:
-            Navigator.pushNamed(context, '/order');
+            Navigator.pushNamed(context, '/request');
             break;
           case 3:
             Navigator.pushNamed(context, '/notification');

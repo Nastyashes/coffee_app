@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CoffeeTab extends StatelessWidget {
   const CoffeeTab({super.key, required this.type});
 
- final CoffeeType type;
+  final CoffeeType type;
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Coffee {
   final String name;
   final String additive;
@@ -33,7 +35,7 @@ List<Coffee> items = [
       priseL: '4,73',
       description:
           'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo..',
-      imageAsset: 'assets/image/cappucino1.png'),
+      imageAsset: 'assets/image/cappucino_chocolate.png'),
   Coffee(
       name: 'Cappuccino',
       additive: 'Oat Milk',
@@ -42,7 +44,7 @@ List<Coffee> items = [
       priseL: '4,00',
       description:
           ' Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk Oat Milk the fo..',
-      imageAsset: 'assets/image/cappucino2.png'),
+      imageAsset: 'assets/image/cappucino_oat_milk.png'),
   Coffee(
       name: 'Cappuccino',
       additive: 'Caramel',
@@ -51,7 +53,7 @@ List<Coffee> items = [
       priseL: '3,84',
       description:
           'Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel Caramel fo..',
-      imageAsset: 'assets/image/cappucino3.png'),
+      imageAsset: 'assets/image/cappucino_caramel.png'),
   Coffee(
       name: 'Cappuccino',
       additive: 'Cream',
@@ -60,17 +62,17 @@ List<Coffee> items = [
       priseL: '4,45',
       description:
           'Cream Cream Cream Cream Cream Cream Cream Cream Cream Cream CreamCream Cream Cream Cream Cream milk the fo..',
-      imageAsset: 'assets/image/cappucino4.png'),
-       Coffee(
-    name: 'Macchiato',
-    additive: 'Caramel',
-    priseS: '3,80',
-    priseM: '4,10',
-    priseL: '4,30',
-    description:
-        'A macchiato is an espresso coffee drink with a small amount of milk, usually foamed. Caramel Macchiato combines espresso with vanilla syrup, steamed milk, milk foam, and caramel drizzle.',
-    imageAsset: 'assets/image/machiato.png'),
-    Coffee(
+      imageAsset: 'assets/image/cappucino_cream.png'),
+  Coffee(
+      name: 'Macchiato',
+      additive: 'Caramel',
+      priseS: '3,80',
+      priseM: '4,10',
+      priseL: '4,30',
+      description:
+          'A macchiato is an espresso coffee drink with a small amount of milk, usually foamed. Caramel Macchiato combines espresso with vanilla syrup, steamed milk, milk foam, and caramel drizzle.',
+      imageAsset: 'assets/image/macchiato_caramel.png'),
+  Coffee(
     name: 'Latte',
     additive: 'Caramel',
     priseS: '3,95',
@@ -78,17 +80,17 @@ List<Coffee> items = [
     priseL: '4,45',
     description:
         'Latte is a coffee drink made with espresso and steamed milk. Caramel Latte features espresso with vanilla syrup, steamed milk, and caramel drizzle.',
-    imageAsset: 'assets/image/latte.png',
+    imageAsset: 'assets/image/latte_caramel.png',
   ),
   Coffee(
-    name: 'Espresso',
-    additive: 'None',
-    priseS: '2,50',
-    priseM: '2,80',
-    priseL: '3,00',
-    description:
-        'Espresso is a concentrated form of coffee made by forcing hot water under pressure through finely-ground coffee beans.',
-    imageAsset: 'assets/image/espresso.png'),
+      name: 'Espresso',
+      additive: 'None',
+      priseS: '2,50',
+      priseM: '2,80',
+      priseL: '3,00',
+      description:
+          'Espresso is a concentrated form of coffee made by forcing hot water under pressure through finely-ground coffee beans.',
+      imageAsset: 'assets/image/espresso_none.png'),
   Coffee(
       name: 'Americano',
       additive: 'Caramel',
@@ -97,7 +99,7 @@ List<Coffee> items = [
       priseL: '4,50',
       description:
           'Add a hint of caramel to your Americano, giving it a sweet twist.',
-      imageAsset: 'assets/image/americano1.png'),
+      imageAsset: 'assets/image/americano_caramel.png'),
   Coffee(
       name: 'Americano',
       additive: 'Vanilla',
@@ -106,8 +108,7 @@ List<Coffee> items = [
       priseL: '4,20',
       description:
           'Enhance your Americano with a dash of vanilla, for a fragrant and sweet aroma.',
-      imageAsset: 'assets/image/americano.png'),
-
+      imageAsset: 'assets/image/americano_vanilla.png'),
 ];
 
 List<Coffee> getItemsByType(CoffeeType type) {
@@ -124,5 +125,16 @@ List<Coffee> getItemsByType(CoffeeType type) {
       return items.where((coffee) => coffee.name == 'Espresso').toList();
     default:
       return [];
+  }
+}
+
+class SelectedCoffee extends ChangeNotifier {
+  Coffee? _coffee;
+
+  Coffee? get coffee => _coffee;
+
+  void selectCoffee(Coffee coffee) {
+    _coffee = coffee;
+    notifyListeners();
   }
 }

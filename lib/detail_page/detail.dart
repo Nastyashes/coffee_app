@@ -1,8 +1,12 @@
+import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/order_page/order_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class Detail extends StatefulWidget {
-  const Detail({super.key});
+  final Coffee coffee;
+
+  const Detail({super.key, required this.coffee});
 
   @override
   State<Detail> createState() => DetailState();
@@ -12,10 +16,11 @@ class DetailState extends State<Detail> {
   bool isExpanded = false;
   bool isLiked = false;
   late String selectedSize;
+
   @override
   void initState() {
     super.initState();
-    selectedSize = '4,53';
+    selectedSize = widget.coffee.priseM;
   }
 
   @override
@@ -52,8 +57,7 @@ class DetailState extends State<Detail> {
             )
           ],
         ),
-        body: ListView( scrollDirection: Axis.vertical,
-          children: [
+        body: ListView(scrollDirection: Axis.vertical, children: [
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               child: Container(
@@ -61,26 +65,26 @@ class DetailState extends State<Detail> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    image: const DecorationImage(
-                        image: AssetImage('assets/image/Cappucino1.png'),
+                    image: DecorationImage(
+                        image: AssetImage(widget.coffee.imageAsset),
                         fit: BoxFit.cover)),
               )),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
-              'Cappucino',
-              style: TextStyle(
+              widget.coffee.name,
+              style: const TextStyle(
                   fontFamily: 'Sora',
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Color.fromRGBO(47, 45, 44, 1)),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
             child: Text(
-              'with Chocolate',
-              style: TextStyle(
+              'with ${widget.coffee.additive}',
+              style: const TextStyle(
                   fontFamily: 'Sora',
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
@@ -148,8 +152,7 @@ class DetailState extends State<Detail> {
               children: [
                 Text.rich(
                   TextSpan(
-                    text:
-                        'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo',
+                    text: widget.coffee.description,
                     style: const TextStyle(
                       fontFamily: 'Sora',
                       fontSize: 14,
@@ -175,9 +178,9 @@ class DetailState extends State<Detail> {
                   ),
                 ),
                 if (isExpanded)
-                  const Text(
-                    'Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee',
-                    style: TextStyle(
+                  Text(
+                    widget.coffee.description,
+                    style: const TextStyle(
                       fontFamily: 'Sora',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -207,7 +210,7 @@ class DetailState extends State<Detail> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            selectedSize = '4,23';
+                            selectedSize = widget.coffee.priseS;
                           });
                         },
                         style: ButtonStyle(
@@ -222,21 +225,21 @@ class DetailState extends State<Detail> {
                           backgroundColor:
                               MaterialStateProperty.resolveWith<Color>(
                                   (states) {
-                            return selectedSize == '4,23'
+                            return selectedSize == widget.coffee.priseS
                                 ? const Color.fromRGBO(255, 245, 238, 1)
                                 : const Color.fromRGBO(255, 255, 255, 1);
                           }),
                           foregroundColor:
                               MaterialStateProperty.resolveWith<Color>(
                                   (states) {
-                            return selectedSize == '4,23'
+                            return selectedSize == widget.coffee.priseS
                                 ? const Color.fromRGBO(198, 124, 78, 1)
                                 : const Color.fromRGBO(47, 45, 44, 1);
                           }),
                           side: MaterialStateProperty.resolveWith<BorderSide>(
                               (states) {
                             return BorderSide(
-                              color: selectedSize == '4,23'
+                              color: selectedSize == widget.coffee.priseS
                                   ? const Color.fromRGBO(198, 124, 78, 1)
                                   : const Color.fromRGBO(222, 222, 222, 1),
                             );
@@ -252,7 +255,7 @@ class DetailState extends State<Detail> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedSize = '4,53';
+                          selectedSize = widget.coffee.priseM;
                         });
                       },
                       style: ButtonStyle(
@@ -266,20 +269,20 @@ class DetailState extends State<Detail> {
                             const Size.fromHeight(43)),
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>((states) {
-                          return selectedSize == '4,53'
+                          return selectedSize == widget.coffee.priseM
                               ? const Color.fromRGBO(255, 245, 238, 1)
                               : const Color.fromRGBO(255, 255, 255, 1);
                         }),
                         foregroundColor:
                             MaterialStateProperty.resolveWith<Color>((states) {
-                          return selectedSize == '4,53'
+                          return selectedSize == widget.coffee.priseM
                               ? const Color.fromRGBO(198, 124, 78, 1)
                               : const Color.fromRGBO(47, 45, 44, 1);
                         }),
                         side: MaterialStateProperty.resolveWith<BorderSide>(
                             (states) {
                           return BorderSide(
-                            color: selectedSize == '4,53'
+                            color: selectedSize == widget.coffee.priseM
                                 ? const Color.fromRGBO(198, 124, 78, 1)
                                 : const Color.fromRGBO(222, 222, 222, 1),
                           );
@@ -294,7 +297,7 @@ class DetailState extends State<Detail> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          selectedSize = '4,73';
+                          selectedSize = widget.coffee.priseL;
                         });
                       },
                       style: ButtonStyle(
@@ -308,20 +311,20 @@ class DetailState extends State<Detail> {
                             const Size.fromHeight(43)),
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>((states) {
-                          return selectedSize == '4,73'
+                          return selectedSize == widget.coffee.priseL
                               ? const Color.fromRGBO(255, 245, 238, 1)
                               : const Color.fromRGBO(255, 255, 255, 1);
                         }),
                         foregroundColor:
                             MaterialStateProperty.resolveWith<Color>((states) {
-                          return selectedSize == '4,73'
+                          return selectedSize == widget.coffee.priseL
                               ? const Color.fromRGBO(198, 124, 78, 1)
                               : const Color.fromRGBO(47, 45, 44, 1);
                         }),
                         side: MaterialStateProperty.resolveWith<BorderSide>(
                             (states) {
                           return BorderSide(
-                            color: selectedSize == '4,73'
+                            color: selectedSize == widget.coffee.priseL
                                 ? const Color.fromRGBO(198, 124, 78, 1)
                                 : const Color.fromRGBO(222, 222, 222, 1),
                           );
@@ -378,7 +381,13 @@ class DetailState extends State<Detail> {
                                       fontWeight: FontWeight.w600)),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, '/order');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      OrderPage(coffee: widget.coffee),
+                                ),
+                              );
                             },
                             child: const Text('Buy Now'),
                           )))

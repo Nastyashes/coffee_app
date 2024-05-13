@@ -1,9 +1,11 @@
+import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/order_page/tab_deliver.dart';
 import 'package:coffee_app/order_page/tab_pickup.dart';
 import 'package:flutter/material.dart';
 
 class OrderPage extends StatefulWidget {
-  const OrderPage({super.key});
+  final Coffee coffee;
+  const OrderPage({super.key, required this.coffee});
 
   @override
   State<OrderPage> createState() => OrderPageState();
@@ -89,9 +91,9 @@ class OrderPageState extends State<OrderPage>
             Expanded(
               child: TabBarView(
                 controller: _tabController,
-                children: const [
-                  Deliver(),
-                  PickUp(),
+                children: [
+                  Deliver(coffee: widget.coffee),
+                  const PickUp(),
                 ],
               ),
             ),
