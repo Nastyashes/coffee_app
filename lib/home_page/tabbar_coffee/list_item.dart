@@ -30,20 +30,20 @@ class CoffeeItem extends StatelessWidget{
                       height: 10,
                     ),
                      Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         item.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'Sora',
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
                      Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         'with ${item.additive}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'Sora',
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -59,7 +59,7 @@ class CoffeeItem extends StatelessWidget{
                             children: [
                                Text(
                                 '\$ ${item.priseM}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontFamily: 'Sora',
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,

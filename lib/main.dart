@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CoffeeApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key,});
+class CoffeeApp extends StatelessWidget {
+  const CoffeeApp({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.w600)),
         fontFamily: 'Sora',
       ),
-      home: const MyHomePage(),
+      home: const CoffeeHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class CoffeeHomePage extends StatelessWidget {
+  const CoffeeHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class MyHomePage extends StatelessWidget {
               heightFactor: 2 / 3,
               child: Image(
                 image: AssetImage(
-                  'assets/image/CoffeeStart.png',
+                  'assets/image/coffee_start.png',
                 ),
                 fit: BoxFit.fitWidth,
               )),

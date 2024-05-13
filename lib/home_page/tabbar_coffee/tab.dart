@@ -1,5 +1,4 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
-import 'package:coffee_app/home_page/like_star.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/list_item.dart';
 import 'package:flutter/material.dart';
 

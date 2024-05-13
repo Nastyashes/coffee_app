@@ -2,11 +2,6 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/americano.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/capuchino.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/espresso.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/latte.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/machiato.dart';
 import 'naw_bar/navbar.dart';
 
 class Home extends StatefulWidget {
@@ -85,7 +80,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           borderRadius: BorderRadius.circular(14),
                           image: const DecorationImage(
                             image: AssetImage(
-                              'assets/image/User.png',
+                              'assets/image/user.png',
                             ),
                           ),
                         ),
@@ -135,7 +130,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         image: const DecorationImage(
-                          image: AssetImage('assets/image/Promo.png'),
+                          image: AssetImage('assets/image/promo.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -224,6 +219,6 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
 extension StringExtension on String {
     String capitalize() {
-      return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+      return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
     }
 }

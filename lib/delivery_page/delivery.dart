@@ -34,7 +34,7 @@ class DeliveryState extends State<Delivery> {
           Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/image/Maps.png'),
+                    image: AssetImage('assets/image/maps.png'),
                     fit: BoxFit.cover,
                     alignment: Alignment.topCenter)),
           ),
@@ -146,7 +146,7 @@ class DeliveryState extends State<Delivery> {
                               decoration: BoxDecoration(
                                   image: const DecorationImage(
                                       image:
-                                          AssetImage('assets/image/Driver.png'),
+                                          AssetImage('assets/image/driver.png'),
                                       fit: BoxFit.contain),
                                   borderRadius: BorderRadius.circular(14)),
                             ),
