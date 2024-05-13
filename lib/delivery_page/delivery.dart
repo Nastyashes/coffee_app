@@ -48,12 +48,12 @@ class DeliveryState extends State<Delivery> {
                     color: const Color.fromRGBO(255, 255, 255, 1)),
                 child: Column(
                   children: [
-                    ImageIcon(
+                    const ImageIcon(
                       AssetImage('assets/icons/indicator.png'),
                       color: Color.fromRGBO(234, 234, 234, 1),
                       size: 44,
                     ),
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(),
                         child: Text('10 minutes left',
                             style: TextStyle(
@@ -61,7 +61,7 @@ class DeliveryState extends State<Delivery> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(48, 51, 54, 1)))),
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Text('Delivery to ',
                           style: TextStyle(
                               fontFamily: 'Sora',
@@ -75,7 +75,7 @@ class DeliveryState extends State<Delivery> {
                               fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(48, 51, 54, 1))),
                     ]),
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(bottom: 10, top: 16),
                         child: Divider(
                           color: Color.fromRGBO(234, 234, 234, 1),
@@ -84,29 +84,29 @@ class DeliveryState extends State<Delivery> {
                           endIndent: 30,
                         )),
                     Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
-                          padding: EdgeInsets.all(12),
+                          padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                  color: Color.fromRGBO(234, 234, 234, 1))),
+                                  color: const Color.fromRGBO(234, 234, 234, 1))),
                           child: Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                         color:
-                                            Color.fromRGBO(222, 222, 222, 1))),
-                                child: ImageIcon(
+                                            const Color.fromRGBO(222, 222, 222, 1))),
+                                child: const ImageIcon(
                                     AssetImage('assets/icons/bike.png'),
                                     color: Color.fromRGBO(198, 124, 78, 1),
                                     size: 32),
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(
                                   left: 12,
                                 ),
@@ -137,20 +137,20 @@ class DeliveryState extends State<Delivery> {
                         )),
                     Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                            const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                         child: Row(
                           children: [
                             Container(
                               height: 54,
                               width: 54,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                       image:
                                           AssetImage('assets/image/Driver.png'),
                                       fit: BoxFit.contain),
                                   borderRadius: BorderRadius.circular(14)),
                             ),
-                            Padding(
+                            const Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,8 +177,8 @@ class DeliveryState extends State<Delivery> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(14),
                                   border: Border.all(
-                                      color: Color.fromRGBO(222, 222, 222, 1))),
-                              child: ImageIcon(
+                                      color: const Color.fromRGBO(222, 222, 222, 1))),
+                              child: const ImageIcon(
                                 AssetImage('assets/icons/call.png'),
                                 size: 54,
                                 color: Color.fromRGBO(128, 128, 128, 1),
