@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color black = Color(0xFF12141d);
-  static const Color mainGreen = Color(0xFF38F094);
-  static const Color coral = Color(0xFFFF715B);
+  static const Color peru = Color(0xFFC67C4E);
+  static const Color black = Color(0xFF130F26);
+  static const Color darkSalateGray = Color(0xFF2F4B4E);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color darkGray = Color(0xFF3A3C45);
-  static const Color gray2 = Color(0xFF697077);
-  static const Color gray3 = Color(0xFF8B929A);
-  static const Color lightGray1 = Color(0xFFD4DAE1);
-  static const Color lightGray2 = Color(0xFFEFF0F2);
-  static const Color lightGray3 = Color(0xFFF7F8F9);
-  static const Color green = Color(0xFF12AF6D);
-  static const Color red = Color(0xFFFF2200);
-  static const Color orange = Color(0xFFF09A1A);
-  static const Color whiteBackground = Color(0xFFD7DBDD);
-  static const Color blue = Color(0xFF4069D1);
-  static const Color violet = Color(0xFF8F2DF0);
+  static const Color lightgray1 = Color(0xFFA9A9A9);
+  static const Color lightgray2 = Color(0xFF9B9B9B);
+  static const Color lightgray3 = Color(0xFF8D8D8D);
+  static const Color gray = Color(0xFF8D8D8D);
+  static const Color gray1 = Color(0xFF808080);
+  static const Color darkGray = Color(0xFF2F2D2C);
+  static const Color tomato = Color(0xFFED5151);
+  static const Color gold = Color(0xFFFBBE21);
+  static const Color darkgrad1 = Color(0xFF131313);
+  static const Color darkgrad2 = Color(0xFF313131);
 }
 
 MaterialColor createMaterialColor(Color color) {

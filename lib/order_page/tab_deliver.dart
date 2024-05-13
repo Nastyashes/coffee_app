@@ -1,6 +1,6 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
-import 'package:coffee_app/order_page/counter_coffee.dart';
 import 'package:coffee_app/order_page/detail_cart.dart/cappucino_card.dart';
+import 'package:coffee_app/order_page/detail_cart.dart/counter_coffee.dart';
 import 'package:flutter/material.dart';
 
 class Deliver extends StatelessWidget {

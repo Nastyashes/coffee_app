@@ -1,3 +1,5 @@
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'routes.dart';
@@ -14,16 +16,6 @@ class CoffeeApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
        routes: routes,
       title: 'CoffeeShop',
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-        primaryColor: const Color.fromRGBO(198, 124, 78, 1),
-        textTheme: const TextTheme(
-            bodyLarge: TextStyle(
-                color: Colors.white,
-                fontSize: 34,
-                fontWeight: FontWeight.w600)),
-        fontFamily: 'Sora',
-      ),
       home: const CoffeeHomePage(),
     );
   }
@@ -66,28 +58,20 @@ class CoffeeHomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.symmetric(
+                         Padding(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 30, vertical: 16),
                           child: Text(
                             'Coffee so good, your taste buds will love it.',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 34,
-                                fontFamily: 'Sora',
-                                fontWeight: FontWeight.w600),
+                            style: AppFonts.header1,
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        const Padding(
+                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 30),
                           child: Text(
                             'The best grain,  the finest roast, the \n powerful flavor.',
-                            style: TextStyle(
-                                color: Color.fromRGBO(169, 169, 169, 1),
-                                fontSize: 14,
-                                fontFamily: 'Sora',
-                                fontWeight: FontWeight.w400),
+                            style:  AppFonts.body2.lightGrey1,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -98,9 +82,9 @@ class CoffeeHomePage extends StatelessWidget {
                                 onPressed: () {Navigator.pushNamed(context, '/home');},
                                 style: ButtonStyle(
                                   foregroundColor: MaterialStateProperty.all(
-                                      const Color.fromRGBO(255, 255, 255, 1)),
+                                     AppColors.white),
                                   backgroundColor: MaterialStateProperty.all(
-                                    const Color.fromRGBO(198, 124, 78, 1),
+                                    AppColors.peru,
                                   ),
                                   minimumSize: const MaterialStatePropertyAll(
                                       Size(double.infinity, 62)),
@@ -110,13 +94,11 @@ class CoffeeHomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                child: const Text(
+                                child:  Text(
                                   'Get Started',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'Sora',
+                                  style: AppFonts.buttom1,
                                   ),
-                                )))
+                                ))
                       ])))
         ]));
   }

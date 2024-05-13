@@ -1,6 +1,6 @@
-
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
+import 'package:coffee_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'naw_bar/navbar.dart';
 
@@ -27,8 +27,8 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
       body: Stack(
         children: [
           Container(
-            height: 280,
-            width: double.infinity,
+            height: MediaQuery.of(context).size.height*0.35,
+            width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -43,19 +43,16 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
           Positioned(
             child: Column(
               children: [
-                // Ваш вміст
-                Row(
+               Padding(padding: const EdgeInsets.only(top: 63, bottom: 28, left: 30, right: 30), child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
-                      child: SizedBox(
-                        width: 200,
+                    
+                       SizedBox(
+                        width: MediaQuery.of(context).size.width*0.43,
+                        height: 40,
                         child: TextField(
                           decoration: const InputDecoration(
-                            contentPadding:
-                                EdgeInsets.symmetric(vertical: 10),
+                            contentPadding: EdgeInsets.symmetric(vertical: 10),
                             labelText: 'Location',
                             labelStyle: TextStyle(
                               fontSize: 14,
@@ -65,15 +62,11 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               height: 3,
                             ),
                           ),
-                          onChanged: (value) {
-                            
-                          },
+                          onChanged: (value) {},
                         ),
-                      ),
+                      
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Container(
+                     Container(
                         width: 44,
                         height: 44,
                         decoration: BoxDecoration(
@@ -85,37 +78,53 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           ),
                         ),
                       ),
-                    ),
+                    
                   ],
-                ),
+                )),
                 Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      contentPadding:
-                          const EdgeInsets.symmetric(vertical: 10),
-                      labelText: 'Search coffee',
-                      labelStyle: const TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Sora',
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(152, 152, 152, 1),
-                        height: 1,
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Container(
+                      height: 52,
+                      decoration: BoxDecoration(
+                          color: AppColors.darkgrad2,
+                          borderRadius: BorderRadius.circular(16)),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          contentPadding:
+                              const EdgeInsets.symmetric(vertical: 10),
+                          labelText: 'Search coffee',
+                          labelStyle: const TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'Sora',
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromRGBO(152, 152, 152, 1),
+                            height: 1,
+                          ),
+                          border: InputBorder.none, 
+                          enabledBorder: const UnderlineInputBorder(
+                           
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                          focusedBorder: const UnderlineInputBorder(
+                           
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                          prefixIcon: const ImageIcon(
+                            AssetImage('assets/icons/search.png'),
+                            color: AppColors.white,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Container( padding: const EdgeInsets.all(10),
+                               decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),color: AppColors.peru), child: 
+                              const ImageIcon(
+                                AssetImage('assets/icons/setting.png'), color: AppColors.white, size: 20,)),
+                            onPressed: () {},
+                          ),
+                        ),
+                        onChanged: (value) {},
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.filter_list),
-                        onPressed: () {},
-                      ),
-                    ),
-                    onChanged: (value) {
-                      // Обробка змін у рядку пошуку
-                    },
-                  ),
-                ),
+                    )),
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
@@ -174,14 +183,18 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 TabBar(
-                  tabs: CoffeeType.values.map((e) =>  Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child:  Text(
-                          e.name.capitalize(),
+                  tabs: CoffeeType.values
+                      .map(
+                        (e) => Tab(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Text(
+                              e.name.capitalize(),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),).toList(),
+                      )
+                      .toList(),
                   labelStyle: const TextStyle(
                     fontFamily: 'Sora',
                     fontWeight: FontWeight.w500,
@@ -204,9 +217,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
                 Expanded(
                   child: TabBarView(
-                    controller: _tabController,
-                    children: CoffeeType.values.map((e) => CoffeeTab(type: e) ).toList()
-                  ),
+                      controller: _tabController,
+                      children: CoffeeType.values
+                          .map((e) => CoffeeTab(type: e))
+                          .toList()),
                 ),
               ],
             ),
@@ -218,7 +232,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
 }
 
 extension StringExtension on String {
-    String capitalize() {
-      return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
-    }
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  }
 }
