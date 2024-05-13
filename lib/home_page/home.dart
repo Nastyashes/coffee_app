@@ -1,4 +1,6 @@
 
+import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/americano.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/capuchino.dart';
@@ -177,40 +179,14 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 TabBar(
-                  tabs: [
-                    Tab(
+                  tabs: CoffeeType.values.map((e) =>  Tab(
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text(
-                          'Cappuccino',
+                        child:  Text(
+                          e.name.capitalize(),
                         ),
                       ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text('Machiato'),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text('Latte'),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text('Americano'),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text('Espresso'),
-                      ),
-                    ),
-                  ],
+                    ),).toList(),
                   labelStyle: const TextStyle(
                     fontFamily: 'Sora',
                     fontWeight: FontWeight.w500,
@@ -234,13 +210,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
-                    children: const [
-                      Cappuccino(),
-                      Machiato(),
-                      Latte(),
-                      Americano(),
-                      Espresso(),
-                    ],
+                    children: CoffeeType.values.map((e) => CoffeeTab(type: e) ).toList()
                   ),
                 ),
               ],
@@ -250,4 +220,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
       ),
     );
   }
+}
+
+extension StringExtension on String {
+    String capitalize() {
+      return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+    }
 }

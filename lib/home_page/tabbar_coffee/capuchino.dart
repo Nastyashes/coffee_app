@@ -85,16 +85,7 @@ class Cappuccino extends StatelessWidget {
                                     iconSize: 16,
                                     onPressed: () {
                                       Navigator.pushNamed(context, '/detail',
-                                          arguments: Coffee(
-                                              name: 'Cappuccino',
-                                              whith: 'With Chocolate',
-                                              priseS: '4,23',
-                                              priseM: '4,53',
-                                              priseL: '4,73',
-                                              description:
-                                                  'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo..',
-                                              imageAsset:
-                                                  'assets/image/Cappucino1.png'));
+                                          );
                                     },
                                     icon: const Icon(Icons.add)),
                               )
