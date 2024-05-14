@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class Coffee {
   final String name;
   final String additive;
@@ -138,3 +139,14 @@ class SelectedCoffee extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+class SizeNotifier extends ChangeNotifier {
+  late String _selectedSize;
+
+  String get selectedSize => _selectedSize;
+
+  void updateSelectedSize(String newSize) {
+    _selectedSize = newSize;
+    notifyListeners();}
+    }
+  

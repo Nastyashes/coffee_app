@@ -1,3 +1,4 @@
+import 'package:coffee_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -38,13 +39,13 @@ class CoffeeCountState extends State<CoffeeCount> {
                   fixedSize: const Size.fromRadius(16),
                   shape: const CircleBorder(),
                   side: const BorderSide(
-                    color: Color.fromRGBO(234, 234, 234, 1),
+                    color: AppColors.borderlight,
                     width: 1,
                   ),
                 ),
                 child: const Icon(
                   Icons.remove,
-                  color: Color.fromRGBO(47, 45, 44, 1),
+                  color: AppColors.darkGray,
                   size: 16,
                 )),
             Text(
@@ -58,13 +59,13 @@ class CoffeeCountState extends State<CoffeeCount> {
                   fixedSize: const Size.fromRadius(16),
                   shape: const CircleBorder(),
                   side: const BorderSide(
-                    color: Color.fromRGBO(234, 234, 234, 1),
+                    color: AppColors.borderlight,
                     width: 1,
                   ),
                 ),
                 child: const Icon(
                   Icons.add,
-                  color: Color.fromRGBO(47, 45, 44, 1),
+                  color: AppColors.darkGray,
                   size: 16,
                 ))
           ]);

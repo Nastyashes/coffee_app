@@ -6,7 +6,7 @@ class AppFonts {
   static TextStyle header1 = GoogleFonts.sora(
       fontSize: 34, fontWeight: FontWeight.w600, color: AppColors.white);
       static TextStyle header2 = GoogleFonts.sora(
-      fontSize: 32, fontWeight: FontWeight.w600, color: AppColors.white);
+      fontSize: 32, fontWeight: FontWeight.w600, color: AppColors.white, height: 1);
   static TextStyle title1 =
       GoogleFonts.sora(fontSize: 20, fontWeight: FontWeight.w600);
   static TextStyle title2 =
@@ -15,7 +15,8 @@ class AppFonts {
       GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w600);
   static TextStyle title4 =
       GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w600);
-      
+    static TextStyle star =
+      GoogleFonts.sora(fontSize: 10, fontWeight: FontWeight.w600);  
   static TextStyle body1 =
       GoogleFonts.sora(fontSize: 12, fontWeight: FontWeight.w400);
   static TextStyle body1medium  = GoogleFonts.sora(fontSize: 12, fontWeight: FontWeight.w600);
@@ -26,7 +27,7 @@ class AppFonts {
   static TextStyle body3 =
       GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle body3medium =
-      GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w600);
+      GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w400);
 
 
   static TextStyle buttom1 = GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w600, color:AppColors.white);
@@ -47,6 +48,7 @@ extension CopyWithStyles on TextStyle {
   TextStyle get darkSalateGray => copyWith(color: AppColors.darkSalateGray);
   TextStyle get peru => copyWith(color: AppColors.peru);
   TextStyle get darkGrey => copyWith(color: AppColors.darkGray);
+  TextStyle get editbutton => copyWith(color: AppColors.editbutton);
 
   TextStyle withColor(Color color) => copyWith(color: color);
   TextStyle withSize(double size) => copyWith(fontSize: size);

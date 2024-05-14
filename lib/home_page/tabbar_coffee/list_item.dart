@@ -1,6 +1,8 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/detail_page/detail.dart';
 import 'package:coffee_app/home_page/like_star.dart';
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeItem extends StatelessWidget {
@@ -12,7 +14,7 @@ class CoffeeItem extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: const Color.fromRGBO(255, 255, 255, 1)),
+            color:AppColors.white),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Expanded(
               child: Container(
@@ -31,21 +33,14 @@ class CoffeeItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               item.name,
-              style: const TextStyle(
-                  fontFamily: 'Sora',
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
+              style: AppFonts.title3.black,
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               'with ${item.additive}',
-              style: const TextStyle(
-                  fontFamily: 'Sora',
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Color.fromRGBO(155, 155, 155, 1)),
+              style: AppFonts.body1.lightGrey2,
             ),
           ),
           Padding(
@@ -56,16 +51,12 @@ class CoffeeItem extends StatelessWidget {
                   children: [
                     Text(
                       '\$ ${item.priseM}',
-                      style: const TextStyle(
-                          fontFamily: 'Sora',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(47, 75, 78, 1)),
+                      style:AppFonts.title2.darkSalateGray,
                     ),
                     Container(
                       width: 32,
                       decoration: BoxDecoration(
-                          color: const Color.fromRGBO(198, 124, 78, 1),
+                          color: AppColors.peru,
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -80,7 +71,7 @@ class CoffeeItem extends StatelessWidget {
                         },
                         icon: const Icon(
                           Icons.add,
-                          color: Color.fromRGBO(255, 255, 255, 1),
+                          color: AppColors.white,
                         ),
                       ),
                     )

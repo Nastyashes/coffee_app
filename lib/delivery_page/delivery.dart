@@ -1,3 +1,5 @@
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 class Delivery extends StatefulWidget {
@@ -18,15 +20,11 @@ class DeliveryState extends State<Delivery> {
             Navigator.of(context).pop();
           },
         ),
-        title: const Padding(
-            padding: EdgeInsets.only(right: 40),
+        title:  Padding(
+            padding: const EdgeInsets.only(right: 40),
             child: Center(
               child: Text('Delivery',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(47, 45, 44, 1))),
+                  style: AppFonts.title2.darkGrey),
             )),
       ),
       body: Stack(
@@ -45,40 +43,28 @@ class DeliveryState extends State<Delivery> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
-                    color: const Color.fromRGBO(255, 255, 255, 1)),
+                    color: AppColors.white),
                 child: Column(
                   children: [
                     const ImageIcon(
                       AssetImage('assets/icons/indicator.png'),
-                      color: Color.fromRGBO(234, 234, 234, 1),
+                      color: AppColors.borderlight,
                       size: 44,
                     ),
-                    const Padding(
-                        padding: EdgeInsets.only(),
+                     Padding(
+                        padding:const EdgeInsets.only(),
                         child: Text('10 minutes left',
-                            style: TextStyle(
-                                fontFamily: 'Sora',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(48, 51, 54, 1)))),
-                    const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                            style: AppFonts.title3.editbutton)),
+                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Text('Delivery to ',
-                          style: TextStyle(
-                              fontFamily: 'Sora',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(128, 128, 128, 1))),
+                          style:AppFonts.body1.grey1),
                       Text('Jl. Kpg Sutoyo',
-                          style: TextStyle(
-                              fontFamily: 'Sora',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Color.fromRGBO(48, 51, 54, 1))),
+                          style: AppFonts.body1medium.grey1),
                     ]),
-                    const Padding(
-                        padding: EdgeInsets.only(bottom: 10, top: 16),
+                     const Padding(
+                        padding:EdgeInsets.only(bottom: 10, top: 16),
                         child: Divider(
-                          color: Color.fromRGBO(234, 234, 234, 1),
+                          color: AppColors.dividerlight,
                           thickness: 4,
                           indent: 30,
                           endIndent: 30,
@@ -90,7 +76,7 @@ class DeliveryState extends State<Delivery> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                  color: const Color.fromRGBO(234, 234, 234, 1))),
+                                  color:AppColors.dividerlight)),
                           child: Row(
                             children: [
                               Container(
@@ -100,14 +86,14 @@ class DeliveryState extends State<Delivery> {
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                         color:
-                                            const Color.fromRGBO(222, 222, 222, 1))),
+                                            AppColors.bordergray)),
                                 child: const ImageIcon(
                                     AssetImage('assets/icons/bike.png'),
-                                    color: Color.fromRGBO(198, 124, 78, 1),
+                                    color: AppColors.peru,
                                     size: 32),
                               ),
-                              const Padding(
-                                padding: EdgeInsets.only(
+                               Padding(
+                                padding:const EdgeInsets.only(
                                   left: 12,
                                 ),
                                 child: Column(
@@ -115,21 +101,11 @@ class DeliveryState extends State<Delivery> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text('Delivered your order',
-                                          style: TextStyle(
-                                              fontFamily: 'Sora',
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color.fromRGBO(
-                                                  48, 51, 54, 1))),
+                                          style: AppFonts.title4.editbutton),
                                       SizedBox(height: 6),
                                       Text(
                                           'We deliver your goods to you in  \nthe shortes possible time.',
-                                          style: TextStyle(
-                                              fontFamily: 'Sora',
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: Color.fromRGBO(
-                                                  128, 128, 128, 1)))
+                                          style: AppFonts.body1.grey1)
                                     ]),
                               )
                             ],
@@ -150,25 +126,15 @@ class DeliveryState extends State<Delivery> {
                                       fit: BoxFit.contain),
                                   borderRadius: BorderRadius.circular(14)),
                             ),
-                            const Padding(
-                                padding: EdgeInsets.only(left: 10),
+                             Padding(
+                                padding: const EdgeInsets.only(left: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('Johan Hawn',
-                                        style: TextStyle(
-                                            fontFamily: 'Sora',
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color:
-                                                Color.fromRGBO(48, 51, 54, 1))),
+                                        style: AppFonts.title4.editbutton),
                                     Text('Personal Courier',
-                                        style: TextStyle(
-                                            fontFamily: 'Sora',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color: Color.fromRGBO(
-                                                128, 128, 128, 1)))
+                                        style: AppFonts.body2.grey1)
                                   ],
                                 )),
                             Expanded(child: Container(height: 54)),
@@ -177,11 +143,11 @@ class DeliveryState extends State<Delivery> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(14),
                                   border: Border.all(
-                                      color: const Color.fromRGBO(222, 222, 222, 1))),
+                                      color: AppColors.bordergray)),
                               child: const ImageIcon(
                                 AssetImage('assets/icons/call.png'),
                                 size: 54,
-                                color: Color.fromRGBO(128, 128, 128, 1),
+                                color:AppColors.gray1,
                               ),
                             )
                           ],

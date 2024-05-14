@@ -1,3 +1,4 @@
+import 'package:coffee_app/themes/button_theme.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -51,8 +52,8 @@ class CoffeeHomePage extends StatelessWidget {
                         0.4
                       ],
                           colors: [
-                        Color.fromRGBO(0, 0, 0, 1),
-                        Color.fromRGBO(0, 0, 0, 0)
+                        AppColors.darkgrad11,
+                        AppColors.darkgrad22
                       ])),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -68,7 +69,7 @@ class CoffeeHomePage extends StatelessWidget {
                           ),
                         ),
                          Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
                           child: Text(
                             'The best grain,  the finest roast, the \n powerful flavor.',
                             style:  AppFonts.body2.lightGrey1,
@@ -80,23 +81,9 @@ class CoffeeHomePage extends StatelessWidget {
                                 horizontal: 30, vertical: 34),
                             child: ElevatedButton(
                                 onPressed: () {Navigator.pushNamed(context, '/home');},
-                                style: ButtonStyle(
-                                  foregroundColor: MaterialStateProperty.all(
-                                     AppColors.white),
-                                  backgroundColor: MaterialStateProperty.all(
-                                    AppColors.peru,
-                                  ),
-                                  minimumSize: const MaterialStatePropertyAll(
-                                      Size(double.infinity, 62)),
-                                  shape: MaterialStateProperty.all(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                  ),
-                                ),
-                                child:  Text(
+                                style: headButtonStyle,
+                                child:  const Text(
                                   'Get Started',
-                                  style: AppFonts.buttom1,
                                   ),
                                 ))
                       ])))

@@ -1,4 +1,6 @@
 
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -23,16 +25,12 @@ class _LikeStarButtonState extends State<LikeStarButton> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextButton.icon(
-          style: const ButtonStyle(
+          style:  const ButtonStyle(
               padding: MaterialStatePropertyAll(EdgeInsets.zero),
               backgroundColor:
-                  MaterialStatePropertyAll(Color.fromRGBO(0, 0, 0, 0.16)),
-              textStyle: MaterialStatePropertyAll(TextStyle(
-                  fontFamily: 'Sora',
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600)),
+                  MaterialStatePropertyAll(Colors.transparent),
               iconColor:
-                  MaterialStatePropertyAll(Color.fromRGBO(251, 190, 33, 1)),
+                  MaterialStatePropertyAll(AppColors.gold),
               iconSize: MaterialStatePropertyAll(10)),
           onPressed: () {
             setState(() {
@@ -42,10 +40,7 @@ class _LikeStarButtonState extends State<LikeStarButton> {
           icon: const Icon(Icons.star),
           label: Text(
             _rating > 0 ? _rating.toString() : '4.8', 
-            style: const TextStyle(
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
-          ),
+            style: AppFonts.star.white),
         ),
         if (_isExpanded)
           Container(
@@ -66,7 +61,7 @@ class _LikeStarButtonState extends State<LikeStarButton> {
                   itemSize: 24.0,
                   itemBuilder: (context, _) => const Icon(
                     Icons.star,
-                    color: Color.fromRGBO(251, 190, 33, 1),
+                    color:AppColors.gold,
                   ),
                   onRatingUpdate: (rating) {
                     setState(() {

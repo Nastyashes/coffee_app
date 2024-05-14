@@ -1,6 +1,7 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
 import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 import 'naw_bar/navbar.dart';
 
@@ -27,13 +28,13 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height*0.35,
+            height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(19, 19, 19, 1),
-                  Color.fromRGBO(49, 49, 49, 1),
+                  AppColors.darkgrad1,
+                  AppColors.darkgrad2,
                 ],
                 begin: Alignment.centerRight,
                 end: Alignment.centerLeft,
@@ -43,44 +44,40 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
           Positioned(
             child: Column(
               children: [
-               Padding(padding: const EdgeInsets.only(top: 63, bottom: 28, left: 30, right: 30), child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    
-                       SizedBox(
-                        width: MediaQuery.of(context).size.width*0.43,
-                        height: 40,
-                        child: TextField(
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 10),
-                            labelText: 'Location',
-                            labelStyle: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'Sora',
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(152, 152, 152, 1),
-                              height: 3,
+                Padding(
+                    padding: const EdgeInsets.only(
+                        top: 63, bottom: 28, left: 30, right: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.43,
+                          height: 40,
+                          child: TextField(
+                            style: AppFonts.body1,
+                            decoration:InputDecoration(
+                              contentPadding:
+                                  const EdgeInsets.symmetric(vertical: 10),
+                              label: Text('Location', style: AppFonts.body2.lightGrey1) ,
+        
                             ),
+                            onChanged: (value) {},
                           ),
-                          onChanged: (value) {},
                         ),
-                      
-                    ),
-                     Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          image: const DecorationImage(
-                            image: AssetImage(
-                              'assets/image/user.png',
+                        Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                'assets/image/user.png',
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    
-                  ],
-                )),
+                      ],
+                    )),
                 Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Container(
@@ -92,21 +89,12 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         decoration: InputDecoration(
                           contentPadding:
                               const EdgeInsets.symmetric(vertical: 10),
-                          labelText: 'Search coffee',
-                          labelStyle: const TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'Sora',
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(152, 152, 152, 1),
-                            height: 1,
-                          ),
-                          border: InputBorder.none, 
+                          label: Text('Search coffee', style: AppFonts.body2.lightGrey1) ,
+                          border: InputBorder.none,
                           enabledBorder: const UnderlineInputBorder(
-                           
                             borderSide: BorderSide(color: Colors.transparent),
                           ),
                           focusedBorder: const UnderlineInputBorder(
-                           
                             borderSide: BorderSide(color: Colors.transparent),
                           ),
                           prefixIcon: const ImageIcon(
@@ -114,11 +102,16 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             color: AppColors.white,
                           ),
                           suffixIcon: IconButton(
-                            icon: Container( padding: const EdgeInsets.all(10),
-                               decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),color: AppColors.peru), child: 
-                              const ImageIcon(
-                                AssetImage('assets/icons/setting.png'), color: AppColors.white, size: 20,)),
+                            icon: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: AppColors.peru),
+                                child: const ImageIcon(
+                                  AssetImage('assets/icons/setting.png'),
+                                  color: AppColors.white,
+                                  size: 20,
+                                )),
                             onPressed: () {},
                           ),
                         ),
@@ -151,31 +144,18 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                 horizontal: 6, vertical: 4),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              color: const Color.fromRGBO(237, 81, 81, 1),
+                              color: AppColors.tomato,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Promo',
-                              style: TextStyle(
-                                fontFamily: 'Sora',
-                                color: Color.fromRGBO(255, 255, 255, 1),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
+                              style: AppFonts.title4.white),
                           ),
                           const SizedBox(
                             height: 15,
                           ),
-                          const Text(
+                          Text(
                             'Buy one get \n one FREE',
-                            style: TextStyle(
-                              height: 1,
-                              fontFamily: 'Sora',
-                              color: Color.fromRGBO(255, 255, 255, 1),
-                              fontSize: 32,
-                              backgroundColor: Color.fromRGBO(19, 19, 19, 1),
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: AppFonts.header2,
                           ),
                         ],
                       ),
@@ -195,15 +175,9 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       )
                       .toList(),
-                  labelStyle: const TextStyle(
-                    fontFamily: 'Sora',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    color: Colors.white,
-                  ),
-                  unselectedLabelColor: const Color.fromRGBO(47, 75, 78, 1),
-                  unselectedLabelStyle:
-                      const TextStyle(fontWeight: FontWeight.w400),
+                  labelStyle: AppFonts.title4.white,
+                  unselectedLabelColor: AppColors.darkSalateGray,
+                  unselectedLabelStyle:AppFonts.body2,
                   indicatorSize: TabBarIndicatorSize.label,
                   controller: _tabController,
                   isScrollable: true,
@@ -211,7 +185,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   dividerColor: Colors.white,
                   indicatorColor: Colors.white,
                   indicator: BoxDecoration(
-                    color: const Color.fromRGBO(198, 124, 78, 1),
+                    color: AppColors.peru,
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),

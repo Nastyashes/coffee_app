@@ -8,6 +8,11 @@ class AppColors {
   static const Color lightgray1 = Color(0xFFA9A9A9);
   static const Color lightgray2 = Color(0xFF9B9B9B);
   static const Color lightgray3 = Color(0xFF8D8D8D);
+  static const Color dividergray = Color(0xFFEAEAEA);
+  static const Color dividerlight = Color(0xFFF4F4F4);
+  static const Color perulight = Color(0xFFFFF5EE);
+  static const Color bordergray = Color(0xFFDEDEDE);
+  static const Color borderlight = Color(0xFFEAEAEA);
   static const Color gray = Color(0xFF8D8D8D);
   static const Color gray1 = Color(0xFF808080);
   static const Color darkGray = Color(0xFF2F2D2C);
@@ -15,6 +20,10 @@ class AppColors {
   static const Color gold = Color(0xFFFBBE21);
   static const Color darkgrad1 = Color(0xFF131313);
   static const Color darkgrad2 = Color(0xFF313131);
+  static const Color darkgrad11 = Color(0xFF000000);
+  static const Color darkgrad22 = Color(0x00000000);
+  static const Color editbutton = Color(0xFF303336);
+
 }
 
 MaterialColor createMaterialColor(Color color) {

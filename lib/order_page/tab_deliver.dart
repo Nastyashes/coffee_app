@@ -1,6 +1,9 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
-import 'package:coffee_app/order_page/detail_cart.dart/cappucino_card.dart';
+import 'package:coffee_app/order_page/detail_cart.dart/coffee_mini_card.dart';
 import 'package:coffee_app/order_page/detail_cart.dart/counter_coffee.dart';
+import 'package:coffee_app/themes/button_theme.dart';
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 class Deliver extends StatelessWidget {
@@ -15,73 +18,50 @@ class Deliver extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                  padding: EdgeInsets.only(bottom: 16),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
                   child: Text('Delivery Address',
-                      style: TextStyle(
-                          fontFamily: 'Sora',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(47, 45, 44, 1)))),
-              const Padding(
-                  padding: EdgeInsets.only(bottom: 8),
-                  child: Text('Jl. Kpg Sutoyo',
-                      style: TextStyle(
-                          fontFamily: 'Sora',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(48, 51, 54, 1)))),
-              const Padding(
-                  padding: EdgeInsets.only(bottom: 16),
+                      style: AppFonts.title3.darkGrey)),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child:
+                      Text('Jl. Kpg Sutoyo', style: AppFonts.title4.darkGrey)),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
                   child: Text('Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
-                      style: TextStyle(
-                          fontFamily: 'Sora',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(128, 128, 128, 1)))),
+                      style: AppFonts.body1)),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   OutlinedButton.icon(
+                    style: const ButtonStyle(
+                        side: MaterialStatePropertyAll(
+                            BorderSide(color: AppColors.bordergray))),
                     onPressed: () {},
                     icon: const ImageIcon(AssetImage('assets/icons/edit.png'),
-                        color: Color.fromRGBO(48, 51, 54, 1)),
-                    label: const Text(
+                        color: AppColors.editbutton),
+                    label: Text(
                       'Edit Address',
-                      style: TextStyle(
-                          fontFamily: 'Sora',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromRGBO(48, 51, 54, 1)),
-                    ),
-                  ),
+                      style: AppFonts.body1.editbutton),),
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
                     child: OutlinedButton.icon(
+                      style: const ButtonStyle(
+                          side: MaterialStatePropertyAll(
+                              BorderSide(color: AppColors.bordergray))),
                       onPressed: () {},
-                      icon: const ImageIcon(
-                        AssetImage('assets/icons/note.png'),
-                        color: Color.fromRGBO(48, 51, 54, 1),
-                      ),
-                      label: const Text(
+                      icon: const ImageIcon(AssetImage('assets/icons/note.png'),
+                          color: AppColors.editbutton),
+                      label: Text(
                         'Add Note',
-                        style: TextStyle(
-                            fontFamily: 'Sora',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(48, 51, 54, 1)),
-                      ),
-                    ),
+                        style: AppFonts.body1.editbutton,),),
                   )
-                ],
-              ),
-            ],
-          ),
-        ),
+                ]),
+            ]),),
         const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Divider(
-              color: Color.fromRGBO(234, 234, 234, 1),
+              color:AppColors.dividerlight,
               thickness: 1,
               indent: 30,
               endIndent: 30,
@@ -104,7 +84,7 @@ class Deliver extends StatelessWidget {
         const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Divider(
-              color: Color.fromRGBO(244, 244, 244, 1),
+              color: AppColors.dividerlight,
               thickness: 4,
               indent: 0,
               endIndent: 0,
@@ -119,7 +99,7 @@ class Deliver extends StatelessWidget {
                     borderRadius: BorderRadius.circular(14),
                   )),
                   side: const MaterialStatePropertyAll(
-                      BorderSide(color: Color.fromRGBO(234, 234, 234, 1)))),
+                      BorderSide(color: AppColors.borderlight))),
               child: SizedBox(
                 height: 56,
                 child: Row(
@@ -128,109 +108,77 @@ class Deliver extends StatelessWidget {
                       const ImageIcon(
                         AssetImage('assets/icons/discount.png'),
                         size: 24,
-                        color: Color.fromRGBO(198, 124, 78, 1),
+                        color: AppColors.peru,
                       ),
-                      const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
+                      Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
                           child: Text('1 Discount is applied',
-                              style: TextStyle(
-                                  fontFamily: 'Sora',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color.fromRGBO(47, 45, 44, 1)))),
+                              style: AppFonts.title4.darkGrey)),
                       Expanded(
                           child: Container(
                         width: 20,
                       )),
                       const Icon(
                         Icons.arrow_forward_ios,
-                        color: Color.fromRGBO(47, 45, 44, 1),
+                        color: AppColors.darkGray,
                         size: 20,
                       )
                     ]),
               ),
             )),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+         Padding(
+          padding:const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text('Payment Summary',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(47, 45, 44, 1)))
+                  style: AppFonts.title3.darkGrey)
             ],
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+         Padding(
+          padding:const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Price',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(47, 45, 44, 1))),
-              Text('\$4.53',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(47, 45, 44, 1)))
+                  style: AppFonts.body2.darkGrey),
+              Text('\$ 4,53',
+                  style: AppFonts.title4.darkGrey)
             ],
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+         Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Delivery Fee',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(47, 45, 44, 1))),
+                  style: AppFonts.body2.darkGrey),
               Text('\$2.0 \$1.0',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(47, 45, 44, 1)))
+                  style: AppFonts.title4.darkGrey)
             ],
           ),
         ),
         const Padding(
             padding: EdgeInsets.symmetric(vertical: 1),
             child: Divider(
-              color: Color.fromRGBO(234, 234, 234, 1),
+              color: AppColors.borderlight,
               thickness: 1,
               indent: 30,
               endIndent: 30,
             )),
-        const Padding(
-          padding: EdgeInsets.symmetric(
+        Padding(
+          padding:const  EdgeInsets.symmetric(
             horizontal: 30,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Total Payment',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(47, 45, 44, 1))),
+                  style: AppFonts.body2.darkGrey),
               Text('\$5.53',
-                  style: TextStyle(
-                      fontFamily: 'Sora',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(47, 45, 44, 1)))
+                  style: AppFonts.title4.darkGrey)
             ],
           ),
         ),
@@ -244,42 +192,34 @@ class Deliver extends StatelessWidget {
                       const ImageIcon(
                         AssetImage('assets/icons/moneys.png'),
                         size: 24,
-                        color: Color.fromRGBO(198, 124, 78, 1),
+                        color: AppColors.peru,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: const Color.fromRGBO(198, 124, 78, 1),
+                            color: AppColors.peru,
                           ),
                           height: 24,
                           width: 54,
                           alignment: Alignment.center,
-                          child: const Text(
+                          child: Text(
                             'Cash',
-                            style: TextStyle(
-                                fontFamily: 'Sora',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(255, 255, 255, 1)),
+                            style: AppFonts.body1.white,
                           ),
                         ),
                       ),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromRGBO(246, 246, 246, 1),
+                          color: AppColors.borderlight,
                         ),
                         height: 24,
                         alignment: Alignment.center,
-                        child: const Text(
+                        child:  Text(
                           '\$5.53',
-                          style: TextStyle(
-                              fontFamily: 'Sora',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(47, 45, 44, 1)),
+                          style: AppFonts.body1.darkGrey,
                         ),
                       ),
                       Expanded(
@@ -291,6 +231,7 @@ class Deliver extends StatelessWidget {
                           icon: const ImageIcon(
                             AssetImage('assets/icons/vector.png'),
                             size: 24,
+                            color: AppColors.gray1,
                           ))
                     ],
                   )),
@@ -299,22 +240,7 @@ class Deliver extends StatelessWidget {
                     child: SizedBox(
                         height: 62,
                         child: ElevatedButton(
-                          style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                            backgroundColor: const MaterialStatePropertyAll(
-                                Color.fromRGBO(198, 124, 78, 1)),
-                            foregroundColor: const MaterialStatePropertyAll(
-                                Color.fromRGBO(255, 255, 255, 1)),
-                            textStyle: const MaterialStatePropertyAll(TextStyle(
-                                fontFamily: 'Sora',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600)),
-                          ),
+                          style: headButtonStyle,
                           onPressed: () {
                             Navigator.pushNamed(context, '/delivery');
                           },

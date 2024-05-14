@@ -1,4 +1,5 @@
 
+import 'package:coffee_app/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -55,9 +56,9 @@ class NavigationPageState extends State<NavigationPage> {
           label: '-',
         ),
       ],
-      backgroundColor: Colors.white,
-      selectedItemColor: const Color.fromRGBO(198, 124, 78, 1),
-      unselectedItemColor: const Color.fromRGBO(141, 141, 141, 1),
+      backgroundColor: AppColors.white,
+      selectedItemColor: AppColors.peru,
+      unselectedItemColor: AppColors.lightgray3,
     );
   }
 }

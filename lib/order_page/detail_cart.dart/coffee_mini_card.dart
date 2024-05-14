@@ -1,4 +1,5 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 class CappuccinoCard extends StatelessWidget {
@@ -24,18 +25,10 @@ class CappuccinoCard extends StatelessWidget {
            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           coffee.name,
-          style: const TextStyle(
-              fontFamily: 'Sora',
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: Color.fromRGBO(47, 45, 44, 1)),
+          style: AppFonts.title3.darkGrey,
         ),
         Text('with ${coffee.additive}',
-        style: const TextStyle(
-              fontFamily: 'Sora',
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Color.fromRGBO(155, 155, 155, 1)))
+        style: AppFonts.body1.lightGrey2)
       ]),
     ),
           ],

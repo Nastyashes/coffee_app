@@ -1,12 +1,15 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/order_page/tab_deliver.dart';
 import 'package:coffee_app/order_page/tab_pickup.dart';
+import 'package:coffee_app/themes/colors.dart';
+import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
 class OrderPage extends StatefulWidget {
   final Coffee coffee;
+  
   const OrderPage({super.key, required this.coffee});
-
+ 
   @override
   State<OrderPage> createState() => OrderPageState();
 }
@@ -14,6 +17,7 @@ class OrderPage extends StatefulWidget {
 class OrderPageState extends State<OrderPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late String selectedSize;
 
   @override
   void initState() {
@@ -23,6 +27,7 @@ class OrderPageState extends State<OrderPage>
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
         appBar: AppBar(
             leading: IconButton(
@@ -31,15 +36,11 @@ class OrderPageState extends State<OrderPage>
                 Navigator.of(context).pop();
               },
             ),
-            title: const Padding(
+            title: Padding(
                 padding: EdgeInsets.only(right: 40),
                 child: Center(
                     child: Text('Order',
-                        style: TextStyle(
-                            fontFamily: 'Sora',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Color.fromRGBO(47, 45, 44, 1)))))),
+                        style: AppFonts.title2.darkGrey)))),
         body: Column(
           children: [
             Padding(
@@ -48,7 +49,7 @@ class OrderPageState extends State<OrderPage>
                 child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      color: const Color.fromRGBO(242, 242, 242, 1),
+                      color: AppColors.borderlight,
                     ),
                     child: TabBar(
                       tabs: [
@@ -69,22 +70,17 @@ class OrderPageState extends State<OrderPage>
                               child: const Center(child: Text('Pick Up'))),
                         )
                       ],
-                      labelStyle: const TextStyle(
-                        fontFamily: 'Sora',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                      unselectedLabelColor: const Color.fromRGBO(47, 45, 44, 1),
+                      labelStyle: AppFonts.title3.white,
+                      unselectedLabelColor: AppColors.darkGray,
                       unselectedLabelStyle:
-                          const TextStyle(fontWeight: FontWeight.w400),
+                        AppFonts.body3medium,
                       indicatorSize: TabBarIndicatorSize.label,
                       controller: _tabController,
                       labelPadding: EdgeInsets.zero,
-                      dividerColor: Colors.white,
-                      indicatorColor: Colors.white,
+                      dividerColor: AppColors.white,
+                      indicatorColor:AppColors.white,
                       indicator: BoxDecoration(
-                        color: const Color.fromRGBO(198, 124, 78, 1),
+                        color:AppColors.peru,
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ))),
