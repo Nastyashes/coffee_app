@@ -20,9 +20,10 @@ class CappuccinoCard extends StatelessWidget {
       ),
     ),
     Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.only(left: 10),
       child:
-           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+           Column(mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           coffee.name,
           style: AppFonts.title3.darkGrey,

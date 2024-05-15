@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 
 class OrderPage extends StatefulWidget {
   final Coffee coffee;
-  
+
   const OrderPage({super.key, required this.coffee});
- 
+
   @override
   State<OrderPage> createState() => OrderPageState();
 }
@@ -27,7 +27,6 @@ class OrderPageState extends State<OrderPage>
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         appBar: AppBar(
             leading: IconButton(
@@ -37,10 +36,9 @@ class OrderPageState extends State<OrderPage>
               },
             ),
             title: Padding(
-                padding: EdgeInsets.only(right: 40),
+                padding: const EdgeInsets.only(right: 40),
                 child: Center(
-                    child: Text('Order',
-                        style: AppFonts.title2.darkGrey)))),
+                    child: Text('Order', style: AppFonts.title2.darkGrey)))),
         body: Column(
           children: [
             Padding(
@@ -72,15 +70,14 @@ class OrderPageState extends State<OrderPage>
                       ],
                       labelStyle: AppFonts.title3.white,
                       unselectedLabelColor: AppColors.darkGray,
-                      unselectedLabelStyle:
-                        AppFonts.body3medium,
+                      unselectedLabelStyle: AppFonts.body3medium,
                       indicatorSize: TabBarIndicatorSize.label,
                       controller: _tabController,
                       labelPadding: EdgeInsets.zero,
                       dividerColor: AppColors.white,
-                      indicatorColor:AppColors.white,
+                      indicatorColor: AppColors.white,
                       indicator: BoxDecoration(
-                        color:AppColors.peru,
+                        color: AppColors.peru,
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ))),

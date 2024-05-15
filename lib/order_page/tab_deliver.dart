@@ -67,7 +67,7 @@ class Deliver extends StatelessWidget {
               endIndent: 30,
             )),
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 10),
           child: Row(
             children: [
               CappuccinoCard(

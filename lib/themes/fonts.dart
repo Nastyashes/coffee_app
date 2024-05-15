@@ -5,8 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 class AppFonts {
   static TextStyle header1 = GoogleFonts.sora(
       fontSize: 34, fontWeight: FontWeight.w600, color: AppColors.white);
-      static TextStyle header2 = GoogleFonts.sora(
-      fontSize: 32, fontWeight: FontWeight.w600, color: AppColors.white, height: 1);
+  static TextStyle header2 = GoogleFonts.sora(
+      fontSize: 26,
+      fontWeight: FontWeight.w600,
+      color: AppColors.white,
+      height: 1);
   static TextStyle title1 =
       GoogleFonts.sora(fontSize: 20, fontWeight: FontWeight.w600);
   static TextStyle title2 =
@@ -15,11 +18,12 @@ class AppFonts {
       GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w600);
   static TextStyle title4 =
       GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w600);
-    static TextStyle star =
-      GoogleFonts.sora(fontSize: 10, fontWeight: FontWeight.w600);  
+  static TextStyle star =
+      GoogleFonts.sora(fontSize: 10, fontWeight: FontWeight.w600);
   static TextStyle body1 =
-      GoogleFonts.sora(fontSize: 12, fontWeight: FontWeight.w400);
-  static TextStyle body1medium  = GoogleFonts.sora(fontSize: 12, fontWeight: FontWeight.w600);
+      GoogleFonts.sora(fontSize: 11, fontWeight: FontWeight.w400);
+  static TextStyle body1medium =
+      GoogleFonts.sora(fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle body2 =
       GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle body2medium =
@@ -29,12 +33,16 @@ class AppFonts {
   static TextStyle body3medium =
       GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w400);
 
-
-  static TextStyle buttom1 = GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w600, color:AppColors.white);
-  static TextStyle buttom2 = GoogleFonts.sora(fontSize: 16, fontWeight: FontWeight.w400, color:AppColors.darkGray);
-  static TextStyle tabButton1 = GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w600, color:AppColors.white);
-  static TextStyle tabButton2 = GoogleFonts.sora(fontSize: 14, fontWeight: FontWeight.w400, color:AppColors.darkSalateGray);
-  
+  static TextStyle buttom1 = GoogleFonts.sora(
+      fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.white);
+  static TextStyle buttom2 = GoogleFonts.sora(
+      fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.darkGray);
+  static TextStyle tabButton1 = GoogleFonts.sora(
+      fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.white);
+  static TextStyle tabButton2 = GoogleFonts.sora(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: AppColors.darkSalateGray);
 }
 
 extension CopyWithStyles on TextStyle {

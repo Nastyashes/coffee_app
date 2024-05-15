@@ -81,22 +81,22 @@ class DetailState extends State<Detail> {
               style: AppFonts.body1.lightGrey2,
             ),
           ),
-          Row(crossAxisAlignment: CrossAxisAlignment.center,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding( 
-                  padding: const EdgeInsets.only(left: 25),
-                  child:IconButton(
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: IconButton(
                     style: const ButtonStyle(
                         backgroundColor:
                             MaterialStatePropertyAll(Colors.transparent),
                         iconColor: MaterialStatePropertyAll(AppColors.gold),
                         iconSize: MaterialStatePropertyAll(20)),
                     onPressed: () {},
-                    icon: 
-                            const ImageIcon(AssetImage('assets/icons/rating.png'))),
-                    ), 
-                  Text('4.8',
-                        style: AppFonts.title3.darkGrey),
+                    icon:
+                        const ImageIcon(AssetImage('assets/icons/rating.png'))),
+              ),
+              Text('4.8', style: AppFonts.title3.darkGrey),
               Text(
                 '(230)',
                 style: AppFonts.body1.darkGrey,
@@ -208,4 +208,3 @@ class DetailState extends State<Detail> {
         ]));
   }
 }
-

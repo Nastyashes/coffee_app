@@ -28,7 +28,7 @@ class CoffeeCountState extends State<CoffeeCount> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Row( mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
             OutlinedButton(
@@ -46,12 +46,12 @@ class CoffeeCountState extends State<CoffeeCount> {
                 child: const Icon(
                   Icons.remove,
                   color: AppColors.darkGray,
-                  size: 16,
+                  size: 14,
                 )),
-            Text(
-              '$counter',
-              style: const TextStyle(fontSize: 20),
-            ),
+           Container(padding: EdgeInsets.zero, child: Text(
+              '$counter', 
+              style: const TextStyle(fontSize: 18),
+            ),) ,
             OutlinedButton(
                 onPressed: increment,
                 style: OutlinedButton.styleFrom(
@@ -66,7 +66,7 @@ class CoffeeCountState extends State<CoffeeCount> {
                 child: const Icon(
                   Icons.add,
                   color: AppColors.darkGray,
-                  size: 16,
+                  size: 14,
                 ))
           ]);
   }

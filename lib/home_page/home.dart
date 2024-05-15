@@ -1,4 +1,5 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/home_page/tabbar_coffee/bloc_home/bloc_home.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
@@ -12,6 +13,7 @@ class Home extends StatefulWidget {
   State<Home> createState() => HomeState();
 }
 
+
 class HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -20,6 +22,8 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +59,11 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           height: 40,
                           child: TextField(
                             style: AppFonts.body1,
-                            decoration:InputDecoration(
+                            decoration: InputDecoration(
                               contentPadding:
                                   const EdgeInsets.symmetric(vertical: 10),
-                              label: Text('Location', style: AppFonts.body2.lightGrey1) ,
-        
+                              label: Text('Location',
+                                  style: AppFonts.body2.lightGrey1),
                             ),
                             onChanged: (value) {},
                           ),
@@ -89,7 +93,8 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         decoration: InputDecoration(
                           contentPadding:
                               const EdgeInsets.symmetric(vertical: 10),
-                          label: Text('Search coffee', style: AppFonts.body2.lightGrey1) ,
+                          label: Text('Search coffee',
+                              style: AppFonts.body2.lightGrey1),
                           border: InputBorder.none,
                           enabledBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.transparent),
@@ -146,12 +151,10 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(8),
                               color: AppColors.tomato,
                             ),
-                            child: Text(
-                              'Promo',
-                              style: AppFonts.title4.white),
+                            child: Text('Promo', style: AppFonts.title4.white),
                           ),
                           const SizedBox(
-                            height: 15,
+                            height: 10,
                           ),
                           Text(
                             'Buy one get \n one FREE',
@@ -177,7 +180,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       .toList(),
                   labelStyle: AppFonts.title4.white,
                   unselectedLabelColor: AppColors.darkSalateGray,
-                  unselectedLabelStyle:AppFonts.body2,
+                  unselectedLabelStyle: AppFonts.body2,
                   indicatorSize: TabBarIndicatorSize.label,
                   controller: _tabController,
                   isScrollable: true,

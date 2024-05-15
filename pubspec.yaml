@@ -12,8 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  provider: ^5.0.0
+  
+  flutter_bloc: ^8.1.5
  
   cupertino_icons: ^1.0.6
 

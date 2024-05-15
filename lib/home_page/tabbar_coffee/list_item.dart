@@ -1,6 +1,6 @@
 import 'package:coffee_app/detail_page/coffee_class.dart';
 import 'package:coffee_app/detail_page/detail.dart';
-import 'package:coffee_app/home_page/like_star.dart';
+import 'package:coffee_app/home_page/tabbar_coffee/like_star.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +33,7 @@ class CoffeeItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               item.name,
-              style: AppFonts.title3.black,
+              style: AppFonts.title4.black,
             ),
           ),
           Padding(
@@ -55,6 +55,7 @@ class CoffeeItem extends StatelessWidget {
                     ),
                     Container(
                       width: 32,
+                      height: 32,
                       decoration: BoxDecoration(
                           color: AppColors.peru,
                           borderRadius: BorderRadius.circular(10)),
