@@ -1,6 +1,6 @@
-import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/coffees/coffee_parameters.dart';
+import 'package:coffee_app/order_page/detail_cart.dart/coffee_counter.dart';
 import 'package:coffee_app/order_page/detail_cart.dart/coffee_mini_card.dart';
-import 'package:coffee_app/order_page/detail_cart.dart/counter_coffee.dart';
 import 'package:coffee_app/themes/button_theme.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
@@ -12,56 +12,55 @@ class Deliver extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      scrollDirection: Axis.vertical,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child:
+                    Text('Delivery Address', style: AppFonts.title3.darkGrey)),
+            Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text('Jl. Kpg Sutoyo', style: AppFonts.title4.darkGrey)),
+            Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: Text('Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
+                    style: AppFonts.body1)),
+            Row(mainAxisSize: MainAxisSize.min, children: [
+              OutlinedButton.icon(
+                style: const ButtonStyle(
+                    side: MaterialStatePropertyAll(
+                        BorderSide(color: AppColors.bordergray))),
+                onPressed: () {},
+                icon: const ImageIcon(AssetImage('assets/icons/edit.png'),
+                    color: AppColors.editbutton),
+                label: Text('Edit Address', style: AppFonts.body1.editbutton),
+              ),
               Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: Text('Delivery Address',
-                      style: AppFonts.title3.darkGrey)),
-              Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child:
-                      Text('Jl. Kpg Sutoyo', style: AppFonts.title4.darkGrey)),
-              Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: Text('Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
-                      style: AppFonts.body1)),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  OutlinedButton.icon(
-                    style: const ButtonStyle(
-                        side: MaterialStatePropertyAll(
-                            BorderSide(color: AppColors.bordergray))),
-                    onPressed: () {},
-                    icon: const ImageIcon(AssetImage('assets/icons/edit.png'),
-                        color: AppColors.editbutton),
-                    label: Text(
-                      'Edit Address',
-                      style: AppFonts.body1.editbutton),),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: OutlinedButton.icon(
-                      style: const ButtonStyle(
-                          side: MaterialStatePropertyAll(
-                              BorderSide(color: AppColors.bordergray))),
-                      onPressed: () {},
-                      icon: const ImageIcon(AssetImage('assets/icons/note.png'),
-                          color: AppColors.editbutton),
-                      label: Text(
-                        'Add Note',
-                        style: AppFonts.body1.editbutton,),),
-                  )
-                ]),
-            ]),),
+                padding: const EdgeInsets.only(left: 8),
+                child: OutlinedButton.icon(
+                  style: const ButtonStyle(
+                      side: MaterialStatePropertyAll(
+                          BorderSide(color: AppColors.bordergray))),
+                  onPressed: () {},
+                  icon: const ImageIcon(AssetImage('assets/icons/note.png'),
+                      color: AppColors.editbutton),
+                  label: Text(
+                    'Add Note',
+                    style: AppFonts.body1.editbutton,
+                  ),
+                ),
+              )
+            ]),
+          ]),
+        ),
         const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Divider(
-              color:AppColors.dividerlight,
+              color: AppColors.dividerlight,
               thickness: 1,
               indent: 30,
               endIndent: 30,
@@ -126,37 +125,32 @@ class Deliver extends StatelessWidget {
                     ]),
               ),
             )),
-         Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('Payment Summary',
-                  style: AppFonts.title3.darkGrey)
+              Text('Payment Summary', style: AppFonts.title3.darkGrey)
             ],
           ),
         ),
-         Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Price',
-                  style: AppFonts.body2.darkGrey),
-              Text('\$ 4,53',
-                  style: AppFonts.title4.darkGrey)
-            ],
-          ),
-        ),
-         Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Delivery Fee',
-                  style: AppFonts.body2.darkGrey),
-              Text('\$2.0 \$1.0',
-                  style: AppFonts.title4.darkGrey)
+              Text('Price', style: AppFonts.body2.darkGrey),
+              Text('\$ 4,53', style: AppFonts.title4.darkGrey)
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Delivery Fee', style: AppFonts.body2.darkGrey),
+              Text('\$2.0 \$1.0', style: AppFonts.title4.darkGrey)
             ],
           ),
         ),
@@ -169,16 +163,14 @@ class Deliver extends StatelessWidget {
               endIndent: 30,
             )),
         Padding(
-          padding:const  EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 30,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Total Payment',
-                  style: AppFonts.body2.darkGrey),
-              Text('\$5.53',
-                  style: AppFonts.title4.darkGrey)
+              Text('Total Payment', style: AppFonts.body2.darkGrey),
+              Text('\$5.53', style: AppFonts.title4.darkGrey)
             ],
           ),
         ),
@@ -217,7 +209,7 @@ class Deliver extends StatelessWidget {
                         ),
                         height: 24,
                         alignment: Alignment.center,
-                        child:  Text(
+                        child: Text(
                           '\$5.53',
                           style: AppFonts.body1.darkGrey,
                         ),

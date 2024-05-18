@@ -29,39 +29,41 @@ class CoffeeHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        body: Stack(fit: StackFit.expand, children: [
-          const FractionallySizedBox(
-              alignment: Alignment.topCenter,
-              widthFactor: 1.1,
-              heightFactor: 2 / 3,
-              child: Image(
-                image: AssetImage(
-                  'assets/image/coffee_start.png',
-                ),
-                fit: BoxFit.fitWidth,
-              )),
+        body:
+         Stack(fit: StackFit.expand, children: [
+           const FractionallySizedBox(
+             alignment: Alignment.topCenter,
+             widthFactor: 1.25,
+             heightFactor: 0.7,
+             child: Image(alignment: Alignment.bottomCenter,
+               image: AssetImage(
+                 'assets/image/coffee_start.png',
+               ),
+               fit: BoxFit.cover,
+             )),
           Align(
               alignment: AlignmentDirectional.bottomCenter,
               child: Container(
+                height: MediaQuery.of(context).size.height * 0.45,
                   decoration: const BoxDecoration(
                       gradient: LinearGradient(
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
                           stops: [
-                        0.35,
-                        0.4
+                        0.6,
+                        0.9
                       ],
                           colors: [
                         AppColors.darkgrad11,
                         AppColors.darkgrad22
                       ])),
-                  child: Column(
+                  child: 
+                  Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                          Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 16),
+                          padding: const EdgeInsets.only(left: 30, right: 30, bottom: 8, top: 8 ),
                           child: Text(
                             'Coffee so good, your taste buds will love it.',
                             style: AppFonts.header1,
@@ -71,14 +73,13 @@ class CoffeeHomePage extends StatelessWidget {
                          Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 30),
                           child: Text(
-                            'The best grain,  the finest roast, the \n powerful flavor.',
+                            'The best grain,  the finest roast, the powerful flavor.',
                             style:  AppFonts.body2.lightGrey1,
                             textAlign: TextAlign.center,
                           ),
                         ),
                         Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 34),
+                            padding: const EdgeInsets.only(left: 30, right: 30, top: 24, bottom: 8),
                             child: ElevatedButton(
                                 onPressed: () {Navigator.pushNamed(context, '/home');},
                                 style: headButtonStyle,

@@ -1,4 +1,4 @@
-import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/coffees/coffee_parameters.dart';
 import 'package:coffee_app/detail_page/coffee_size_button.dart';
 import 'package:coffee_app/order_page/order_page.dart';
 import 'package:coffee_app/themes/button_theme.dart';
@@ -18,7 +18,6 @@ class Detail extends StatefulWidget {
 
 class DetailState extends State<Detail> {
   bool isExpanded = false;
-  bool isLiked = false;
   late String selectedSize;
 
   @override
@@ -45,14 +44,14 @@ class DetailState extends State<Detail> {
           ),
           actions: [
             IconButton(
-              icon: const ImageIcon(AssetImage('assets/icons/heart.png')),
-              color: isLiked ? AppColors.peru : AppColors.darkGray,
-              onPressed: () {
-                setState(() {
-                  isLiked = !isLiked;
-                });
-              },
-            )
+            icon: const ImageIcon(AssetImage('assets/icons/heart.png')),
+            color: widget.coffee.isLiked ? AppColors.peru : AppColors.darkGray,
+            onPressed: () {
+              setState(() {
+                widget.coffee.isLiked = !widget.coffee.isLiked;
+              });
+            },
+          )
           ],
         ),
         body: ListView(scrollDirection: Axis.vertical, children: [

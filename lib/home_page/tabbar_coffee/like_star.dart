@@ -1,5 +1,3 @@
-
-import 'package:coffee_app/home_page/tabbar_coffee/bloc_home/bloc_home.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +15,6 @@ class LikeStarButtonState {
 }
 
 class _LikeStarButtonState extends State<LikeStarButton> {
-  final _homePageBloc = HomePageBloc();
   double _rating = 0.0;
   bool _isExpanded = false;
 
@@ -67,7 +64,6 @@ class _LikeStarButtonState extends State<LikeStarButton> {
                   ),
                   onRatingUpdate: (rating) {
                     setState(() {
-                        _homePageBloc.add(ClickStar());
                       _rating = rating;
                       _isExpanded =
                           false; 

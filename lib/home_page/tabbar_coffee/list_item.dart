@@ -1,4 +1,4 @@
-import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/coffees/coffee_parameters.dart';
 import 'package:coffee_app/detail_page/detail.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/like_star.dart';
 import 'package:coffee_app/themes/colors.dart';
@@ -33,7 +33,7 @@ class CoffeeItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               item.name,
-              style: AppFonts.title4.black,
+              style: AppFonts.title3.black,
             ),
           ),
           Padding(

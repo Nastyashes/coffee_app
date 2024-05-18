@@ -89,7 +89,7 @@ class DeliveryState extends State<Delivery> {
                                     color: AppColors.peru,
                                     size: 32),
                               ),
-                              SizedBox(width: 12),
+                              const SizedBox(width: 12),
                                 Expanded(child:   Column(
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
@@ -136,7 +136,7 @@ class DeliveryState extends State<Delivery> {
                                         style: AppFonts.body2.grey1)
                                   ],
                                 )),
-                            Expanded(child: SizedBox (width: double.minPositive,)),
+                            const Expanded(child: SizedBox (width: double.minPositive,)),
                             Container(
                               alignment: Alignment.center,
                               decoration: BoxDecoration(

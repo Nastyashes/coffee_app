@@ -1,9 +1,10 @@
-import 'package:coffee_app/detail_page/coffee_class.dart';
-import 'package:coffee_app/home_page/tabbar_coffee/bloc_home/bloc_home.dart';
+import 'package:coffee_app/coffees/coffee_bloc.dart';
+import 'package:coffee_app/coffees/coffee_parameters.dart';
 import 'package:coffee_app/home_page/tabbar_coffee/tab.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'naw_bar/navbar.dart';
 
 class Home extends StatefulWidget {
@@ -20,16 +21,19 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+     _tabController = TabController(length: CoffeeType.values.length, vsync: this);
   }
 
 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BlocProvider(
+      create: (context) => CoffeeBloc(),
+      child: Scaffold(
       bottomNavigationBar: const NavigationPage(),
-      body: Stack(
+      body:  
+      Stack(
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.35,
@@ -45,7 +49,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
             ),
           ),
-          Positioned(
+          Align(
             child: Column(
               children: [
                 Padding(
@@ -131,7 +135,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 24, vertical: 10),
-                      height: 140,
+                      height: MediaQuery.of(context).size.height * 0.18,
                       width: double.infinity,
                       alignment: Alignment.centerLeft,
                       decoration: BoxDecoration(
@@ -199,14 +203,13 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           .map((e) => CoffeeTab(type: e))
                           .toList()),
                 ),
-              ],
-            ),
+              ]),
           ),
-        ],
-      ),
-    );
+        ])
+        ));
+      }
   }
-}
+
 
 extension StringExtension on String {
   String capitalize() {

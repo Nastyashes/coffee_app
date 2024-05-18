@@ -1,4 +1,4 @@
-import 'package:coffee_app/detail_page/coffee_class.dart';
+import 'package:coffee_app/coffees/coffee_parameters.dart';
 import 'package:coffee_app/order_page/tab_deliver.dart';
 import 'package:coffee_app/order_page/tab_pickup.dart';
 import 'package:coffee_app/themes/colors.dart';
