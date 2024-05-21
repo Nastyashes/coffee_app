@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class CoffeeSizeButton extends StatefulWidget {
   final Coffee coffee;
+  final Function(String) onSizeSelected;
 
-  const CoffeeSizeButton(BuildContext context,
-      {super.key, required this.coffee});
+  const CoffeeSizeButton({super.key, required this.coffee, required this.onSizeSelected});
 
   @override
   State<CoffeeSizeButton> createState() => CoffeeSizeButtonState();
@@ -14,10 +14,18 @@ class CoffeeSizeButton extends StatefulWidget {
 
 class CoffeeSizeButtonState extends State<CoffeeSizeButton> {
   late String selectedSize;
+
   @override
   void initState() {
     super.initState();
     selectedSize = widget.coffee.priseM;
+  }
+
+  void selectSize(String size) {
+    setState(() {
+      selectedSize = size;
+    });
+    widget.onSizeSelected(size); // Відправляємо вибраний розмір назад
   }
 
   @override
@@ -28,11 +36,7 @@ class CoffeeSizeButtonState extends State<CoffeeSizeButton> {
           child: Padding(
             padding: const EdgeInsets.only(right: 6),
             child: ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  selectedSize = widget.coffee.priseS;
-                });
-              },
+              onPressed: () => selectSize(widget.coffee.priseS),
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
@@ -40,14 +44,12 @@ class CoffeeSizeButtonState extends State<CoffeeSizeButton> {
                   ),
                 ),
                 fixedSize: MaterialStateProperty.all(const Size.fromHeight(43)),
-                backgroundColor:
-                    MaterialStateProperty.resolveWith<Color>((states) {
+                backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
                   return selectedSize == widget.coffee.priseS
                       ? AppColors.perulight
                       : AppColors.white;
                 }),
-                foregroundColor:
-                    MaterialStateProperty.resolveWith<Color>((states) {
+                foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
                   return selectedSize == widget.coffee.priseS
                       ? AppColors.peru
                       : AppColors.darkGray;
@@ -65,82 +67,73 @@ class CoffeeSizeButtonState extends State<CoffeeSizeButton> {
           ),
         ),
         Expanded(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6),
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                selectedSize = widget.coffee.priseM;
-              });
-            },
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: ElevatedButton(
+              onPressed: () => selectSize(widget.coffee.priseM),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-              ),
-              fixedSize: MaterialStateProperty.all(const Size.fromHeight(43)),
-              backgroundColor:
-                  MaterialStateProperty.resolveWith<Color>((states) {
-                return selectedSize == widget.coffee.priseM
-                    ? AppColors.perulight
-                    : AppColors.white;
-              }),
-              foregroundColor:
-                  MaterialStateProperty.resolveWith<Color>((states) {
-                return selectedSize == widget.coffee.priseM
-                    ? AppColors.peru
-                    : AppColors.darkGray;
-              }),
-              side: MaterialStateProperty.resolveWith<BorderSide>((states) {
-                return BorderSide(
-                  color: selectedSize == widget.coffee.priseM
+                fixedSize: MaterialStateProperty.all(const Size.fromHeight(43)),
+                backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+                  return selectedSize == widget.coffee.priseM
+                      ? AppColors.perulight
+                      : AppColors.white;
+                }),
+                foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+                  return selectedSize == widget.coffee.priseM
                       ? AppColors.peru
-                      : AppColors.bordergray,
-                );
-              }),
-            ),
-            child: const Text('M'),
-          ),
-        )),
-        Expanded(
-            child: Padding(
-          padding: const EdgeInsets.only(left: 6),
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                selectedSize = widget.coffee.priseL;
-              });
-            },
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                      : AppColors.darkGray;
+                }),
+                side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+                  return BorderSide(
+                    color: selectedSize == widget.coffee.priseM
+                        ? AppColors.peru
+                        : AppColors.bordergray,
+                  );
+                }),
               ),
-              fixedSize: MaterialStateProperty.all(const Size.fromHeight(43)),
-              backgroundColor:
-                  MaterialStateProperty.resolveWith<Color>((states) {
-                return selectedSize == widget.coffee.priseL
-                    ? AppColors.perulight
-                    : AppColors.white;
-              }),
-              foregroundColor:
-                  MaterialStateProperty.resolveWith<Color>((states) {
-                return selectedSize == widget.coffee.priseL
-                    ? AppColors.peru
-                    : AppColors.darkGray;
-              }),
-              side: MaterialStateProperty.resolveWith<BorderSide>((states) {
-                return BorderSide(
+              child: const Text('M'),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: ElevatedButton(
+              onPressed: () => selectSize(widget.coffee.priseL),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                fixedSize: MaterialStateProperty.all(const Size.fromHeight(43)),
+                backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+                  return selectedSize == widget.coffee.priseL
+                      ? AppColors.perulight
+                      : AppColors.white;
+                }),
+                foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+                  return selectedSize == widget.coffee.priseL
+                      ? AppColors.peru
+                      : AppColors.darkGray;
+                }),
+                side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+                  return BorderSide(
                     color: selectedSize == widget.coffee.priseL
                         ? AppColors.peru
-                        : AppColors.bordergray);
-              }),
+                        : AppColors.bordergray,
+                  );
+                }),
+              ),
+              child: const Text('L'),
             ),
-            child: const Text('L'),
           ),
-        )),
+        ),
       ],
     );
   }

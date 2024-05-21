@@ -7,8 +7,9 @@ import 'home_page/naw_bar/notification.dart';
 
 final Map<String, WidgetBuilder> routes = {
   '/home': (context) => const Home(),
-  '/few': (context) => const Few(),
+  '/few': (context) =>  const Few(),
   '/delivery': (context) => const Delivery(),
   '/notification': (context) => const NotificationPage(),
   '/request': (context) => const RequestPage(),
 };
+

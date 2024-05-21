@@ -7,7 +7,7 @@ import 'package:coffee_app/themes/fonts.dart';
 class MiniItemCoffee extends StatelessWidget {
   final Coffee item;
 
-  const MiniItemCoffee({super.key, required this.item});
+  const MiniItemCoffee(f, {super.key, required this.item, required Coffee coffee});
 
   @override
   Widget build(BuildContext context) {
@@ -46,24 +46,34 @@ class MiniItemCoffee extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Detail(coffee: item),
+                builder: (context) => Detail(coffee: item, onLiked: () {  },),
               ),
             );
           },
-          child: Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              color: item.isLiked ? AppColors.peru : AppColors.white,
-              borderRadius: BorderRadius.circular(10),
+          child:  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                          color: AppColors.peru,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: IconButton(
+                        visualDensity: VisualDensity.adaptivePlatformDensity,
+                        iconSize: 16,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Detail(coffee: item, onLiked: () {  },),
+                            ),
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.add,
+                          color: AppColors.white,
+                        ),
+                      ),
+                    ),
             ),
-            child: Icon(
-              item.isLiked ? Icons.favorite : Icons.favorite_border,
-              color: item.isLiked ? AppColors.white : AppColors.peru,
-            ),
-          ),
-        ),
-      ],
-    );
+       ]);
   }
 }

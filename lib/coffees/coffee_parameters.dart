@@ -18,6 +18,7 @@ class Coffee {
     required this.imageAsset,
     this.isLiked = false,
   });
+
 }
 enum CoffeeType {
   cappuccino,

@@ -2,7 +2,6 @@ import 'package:coffee_app/themes/button_theme.dart';
 import 'package:coffee_app/themes/colors.dart';
 import 'package:coffee_app/themes/fonts.dart';
 import 'package:flutter/material.dart';
-
 import 'routes.dart';
 
 void main() {

@@ -17,8 +17,7 @@ class OrderPage extends StatefulWidget {
 class OrderPageState extends State<OrderPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  late String selectedSize;
-
+  
   @override
   void initState() {
     super.initState();
@@ -85,7 +84,7 @@ class OrderPageState extends State<OrderPage>
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  Deliver(coffee: widget.coffee),
+                  Deliver(coffee: widget.coffee,),
                   const PickUp(),
                 ],
               ),

@@ -9,8 +9,9 @@ import 'package:flutter/material.dart';
 
 class Detail extends StatefulWidget {
   final Coffee coffee;
+  final Function() onLiked;
 
-  const Detail({super.key, required this.coffee});
+  const Detail({super.key, required this.coffee, required this.onLiked});
 
   @override
   State<Detail> createState() => DetailState();
@@ -24,6 +25,12 @@ class DetailState extends State<Detail> {
   void initState() {
     super.initState();
     selectedSize = widget.coffee.priseM;
+  }
+
+  void updateSelectedSize(String size) {
+    setState(() {
+      selectedSize = size;
+    });
   }
 
   @override
@@ -44,14 +51,15 @@ class DetailState extends State<Detail> {
           ),
           actions: [
             IconButton(
-            icon: const ImageIcon(AssetImage('assets/icons/heart.png')),
-            color: widget.coffee.isLiked ? AppColors.peru : AppColors.darkGray,
-            onPressed: () {
-              setState(() {
-                widget.coffee.isLiked = !widget.coffee.isLiked;
-              });
-            },
-          )
+              icon: const ImageIcon(AssetImage('assets/icons/heart.png')),
+              color: widget.coffee.isLiked ? AppColors.peru : AppColors.darkGray,
+              onPressed: () {
+                setState(() {
+                  widget.coffee.isLiked = !widget.coffee.isLiked;
+                });
+                widget.onLiked();
+              },
+            )
           ],
         ),
         body: ListView(scrollDirection: Axis.vertical, children: [
@@ -165,16 +173,12 @@ class DetailState extends State<Detail> {
                 style: AppFonts.title3.darkGrey,
               )),
           Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CoffeeSizeButton(context,
-                  coffee: Coffee(
-                      priseS: widget.coffee.priseS,
-                      priseM: widget.coffee.priseM,
-                      priseL: widget.coffee.priseL,
-                      name: '',
-                      additive: '',
-                      description: '',
-                      imageAsset: ''))),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: CoffeeSizeButton(
+              coffee: widget.coffee,
+              onSizeSelected: updateSelectedSize,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
             child: Row(children: [

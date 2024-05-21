@@ -26,5 +26,6 @@ class CoffeeBloc extends Bloc<CoffeeEvent,CoffeeState>{
       } catch (e) {emit(const CoffeeError('Error'));
       }
     });
+    
   }
 }
