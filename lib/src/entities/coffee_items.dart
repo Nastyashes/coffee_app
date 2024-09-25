@@ -54,7 +54,7 @@ class Coffee {
       case CoffeeSize.large:
         return priseL;
       default:
-        return priseM; // За замовчуванням
+        return priseM; 
     }
   }
 }

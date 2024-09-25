@@ -5,7 +5,7 @@ import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/
 import 'package:coffee_app/src/presentation/themes/button_theme.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
-import 'package:coffee_app/src/users/users.dart';
+import 'package:coffee_app/src/entities/users/users.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/bloc_coffee_counter.dart';

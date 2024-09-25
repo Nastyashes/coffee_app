@@ -4,7 +4,7 @@ import 'package:coffee_app/src/presentation/screens/home_page/home.dart';
 import 'package:coffee_app/src/presentation/screens/few_page/few_page.dart';
 import 'package:coffee_app/src/presentation/screens/order_page/order_page.dart';
 import 'package:coffee_app/src/presentation/screens/start_page/start_page.dart';
-import 'package:coffee_app/src/users/users.dart';
+import 'package:coffee_app/src/entities/users/users.dart';
 import 'package:flutter/material.dart';
 import '../presentation/screens/notification_page/notification.dart';
 
