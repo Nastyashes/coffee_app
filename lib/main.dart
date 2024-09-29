@@ -1,5 +1,7 @@
 import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
 import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/bloc_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/location_bloc/location_bloc.dart';
+import 'package:coffee_app/src/presentation/bloc/location_bloc/location_event.dart';
 import 'package:coffee_app/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +26,8 @@ class CoffeeApp extends StatelessWidget {
           BlocProvider<CoffeeCounterBloc>(
             create: (context) => CoffeeCounterBloc(),
           ),
+          BlocProvider(
+      create: (context) => LocationBloc()..add(RequestLocation()))
         ],
         child: MaterialApp(
           builder: (context, widget) => ResponsiveWrapper.builder(

@@ -1,5 +1,6 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
 import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
+import 'package:coffee_app/src/presentation/screens/home_page/geolocation.dart';
 import 'package:coffee_app/src/presentation/screens/naw_bar/navbar.dart';
 import 'package:coffee_app/src/presentation/screens/home_page/tabbar_coffee/tab.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
@@ -18,12 +19,19 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  String? _currentLocation;
 
   @override
   void initState() {
     super.initState();
     _tabController =
         TabController(length: CoffeeType.values.length, vsync: this);
+
+    getCurrentLocation().then((value) {
+      setState(() {
+        _currentLocation = value;
+      });
+    });
   }
 
   @override
@@ -51,26 +59,29 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
             Align(
               child: Column(
                 children: [
+                   Text(_currentLocation ?? 'Loading...'),
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 63, bottom: 28, left: 30, right: 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.43,
-                          height: 40,
-                          child: TextField(
-                            style: AppFonts.body1,
-                            decoration: InputDecoration(
-                              contentPadding:
-                                  const EdgeInsets.symmetric(vertical: 10),
-                              label: Text('Location',
-                                  style: AppFonts.body2.lightGrey1),
-                            ),
-                            onChanged: (value) {},
-                          ),
-                        ),
+                       SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.43,
+                              height: 40,
+                              child: TextField(
+                                style: AppFonts.body1,
+                                decoration: InputDecoration(
+                                  contentPadding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  label: Text('locationText',
+                                      style: AppFonts.body2.lightGrey1),
+                                ),
+                                onChanged: (value) {},
+                              ),
+                            )
+                          
+                        ,
                         Container(
                           width: 44,
                           height: 44,
