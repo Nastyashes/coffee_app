@@ -2,9 +2,9 @@ import 'package:coffee_app/src/presentation/screens/few_page/mini_item.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_bloc.dart';
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_event.dart';
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_state.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_event.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_state.dart';
 import 'package:coffee_app/src/presentation/screens/naw_bar/navbar.dart';
 
 class Few extends StatefulWidget {

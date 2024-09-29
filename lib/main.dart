@@ -1,5 +1,5 @@
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_bloc.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/bloc_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/bloc_coffee_counter.dart';
 import 'package:coffee_app/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

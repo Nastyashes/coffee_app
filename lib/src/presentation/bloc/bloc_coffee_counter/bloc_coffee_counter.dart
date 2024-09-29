@@ -1,6 +1,6 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/event_coffee_counter.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/state_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/event_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/state_coffee_counter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CoffeeCounterBloc extends Bloc<CoffeeCounterEvent, CoffeeCounterState> {

@@ -1,6 +1,6 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/bloc_coffee_counter.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/event_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/bloc_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/event_coffee_counter.dart';
 import 'package:coffee_app/src/presentation/screens/order_page/order_page.dart';
 import 'package:coffee_app/src/presentation/themes/button_theme.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';

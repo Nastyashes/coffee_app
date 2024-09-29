@@ -1,15 +1,15 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
 import 'package:coffee_app/src/entities/deliver_cost.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/add_notes.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/coffee_mini_card.dart';
+import 'package:coffee_app/src/presentation/screens/order_page/add_notes_address.dart';
+import 'package:coffee_app/src/presentation/screens/order_page/coffee_mini_card.dart';
 import 'package:coffee_app/src/presentation/themes/button_theme.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
 import 'package:coffee_app/src/entities/users/users.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/bloc_coffee_counter.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/detail_cart.dart/bloc_coffee_counter/state_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/bloc_coffee_counter.dart';
+import 'package:coffee_app/src/presentation/bloc/bloc_coffee_counter/state_coffee_counter.dart';
 
 class Deliver extends StatelessWidget {
   final Users user;

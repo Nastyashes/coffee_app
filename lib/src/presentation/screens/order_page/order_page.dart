@@ -1,8 +1,8 @@
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_bloc.dart';
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_event.dart';
-import 'package:coffee_app/src/presentation/coffees_bloc/coffee_state.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/tab_deliver.dart';
-import 'package:coffee_app/src/presentation/screens/order_page/tab_pickup.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_event.dart';
+import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_state.dart';
+import 'package:coffee_app/src/presentation/screens/order_page/tabbar/tab_deliver.dart';
+import 'package:coffee_app/src/presentation/screens/order_page/tabbar/tab_pickup.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
 import 'package:coffee_app/src/entities/users/users.dart';

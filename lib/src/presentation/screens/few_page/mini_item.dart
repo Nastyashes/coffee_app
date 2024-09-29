@@ -1,5 +1,5 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
-import 'package:coffee_app/src/presentation/screens/detail_page/view/detail_page.dart';
+import 'package:coffee_app/src/presentation/screens/detail_page/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
