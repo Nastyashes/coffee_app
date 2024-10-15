@@ -6,20 +6,20 @@
     "configurations": [
         {
             "name": "untitled",
-            "cwd": "Users/svitlanakravchenko/Apps/untitled",
+            "cwd": "coffee_app",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "untitled (profile mode)",
-            "cwd": "Users/svitlanakravchenko/Apps/untitled",
+            "cwd": "coffee_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "untitled (release mode)",
-            "cwd": "Users/svitlanakravchenko/Apps/untitled",
+            "cwd": "coffee_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

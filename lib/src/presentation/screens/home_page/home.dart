@@ -1,5 +1,6 @@
 import 'package:coffee_app/src/entities/coffee_items.dart';
 import 'package:coffee_app/src/presentation/bloc/coffees_bloc/coffee_bloc.dart';
+import 'package:coffee_app/src/presentation/screens/home_page/location_user.dart';
 import 'package:coffee_app/src/presentation/screens/naw_bar/navbar.dart';
 import 'package:coffee_app/src/presentation/screens/home_page/tabbar_coffee/tab.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
@@ -57,20 +58,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.43,
-                          height: 40,
-                          child: TextField(
-                            style: AppFonts.body1,
-                            decoration: InputDecoration(
-                              contentPadding:
-                                  const EdgeInsets.symmetric(vertical: 10),
-                              label: Text('Location',
-                                  style: AppFonts.body2.lightGrey1),
-                            ),
-                            onChanged: (value) {},
-                          ),
-                        ),
+                       const LocationUser(),
                         Container(
                           width: 44,
                           height: 44,
