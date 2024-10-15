@@ -12,7 +12,6 @@ Original design available at: [Coffee Shop Mobile App Design](https://www.figma.
 
 ## Screenshots
 
-## Screenshots
 
 <div style="display: flex; flex-direction: row;">
     <img src="screenshots/Screenshot_1.jpg" alt="Screenshot 1" style="width: 32%; margin-right: 2%;" />
@@ -20,13 +19,11 @@ Original design available at: [Coffee Shop Mobile App Design](https://www.figma.
     <img src="screenshots/Screenshot_3.jpg" alt="Screenshot 3" style="width: 32%;" />
 </div>
 
-
-![Screenshot 1](screenshots/Screenshot_1.jpg)
-![Screenshot 2](screenshots/Screenshot_2.jpg)
-![Screenshot 3](screenshots/Screenshot_3.jpg)
-![Screenshot 4](screenshots/Screenshot_4.jpg)
-![Screenshot 5](screenshots/Screenshot_5.jpg)
-![Screenshot 6](screenshots/Screenshot_6.jpg)
+<div style="display: flex; flex-direction: row;">
+    <img src="screenshots/Screenshot_4.jpg" alt="Screenshot 1" style="width: 32%; margin-right: 2%;" />
+    <img src="screenshots/Screenshot_5.jpg" alt="Screenshot 2" style="width: 32%; margin-right: 2%;" />
+    <img src="screenshots/Screenshot_6.jpg" alt="Screenshot 3" style="width: 32%;" />
+</div>
 
 ## Contact
 
