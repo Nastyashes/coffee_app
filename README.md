@@ -1,16 +1,26 @@
-# coffee_app
+# Flutter Portfolio Project
 
-A new Flutter project.
+This Flutter project was created exclusively for the portfolio of Kravchenko A. I, Kravchenko A., am a young aspiring developer looking for opportunities to further develop my skills and find a job.
 
-## Getting Started
+**Important Note**: This application is not a finished project and is still under development.
 
-This project is a starting point for a Flutter application.
+## Design
 
-A few resources to get you started if this is your first Flutter project:
+The application's design is based on free Figma designs. Pages that are not included in the original design have been created in adherence to the main style.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Original design available at: [Coffee Shop Mobile App Design](https://www.figma.com/community/file/1116708627748807811/coffee-shop-mobile-app-design)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+![Screenshot 1](screenshots/Screenshot_1.jpg)
+![Screenshot 2](screenshots/Screenshot_2.jpg)
+![Screenshot 3](screenshots/Screenshot_3.jpg)
+![Screenshot 4](screenshots/Screenshot_4.jpg)
+![Screenshot 5](screenshots/Screenshot_5.jpg)
+![Screenshot 6](screenshots/Screenshot_6.jpg)
+
+## Contact
+
+For inquiries, you can reach the author of this application via email: shaytankay@gmail.com
+
+Thank you for viewing my work.
