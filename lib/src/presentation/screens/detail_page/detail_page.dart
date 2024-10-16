@@ -23,7 +23,7 @@ class Detail extends StatefulWidget {
 
 class DetailState extends State<Detail> {
   bool isExpanded = false;
-  CoffeeSize selectedSize = CoffeeSize.medium; 
+  CoffeeSize selectedSize = CoffeeSize.medium; // Змінено на enum
 
   void toggleExpanded() {
     setState(() {
