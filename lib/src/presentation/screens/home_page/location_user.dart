@@ -39,33 +39,45 @@ class LocationUserState extends State<LocationUser> {
     getCurrentLocation();
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(padding: EdgeInsets.only(left: 12), child: 
-        Text(
-          'Location',
-          style: AppFonts.body1.lightGrey1,
-        ),),
-        TextButton(
-          onPressed: checkLocationPermission,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _position != null
-               ? Text(_position.toString(), style: AppFonts.body2.lightGrey1)
-                  : Text('My Position???', style: AppFonts.body2.lightGrey1),
-              const Icon(
-                Icons.expand_more,
-                color: AppColors.lightgray1,
+    return SizedBox(
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 11),
+              child: Text(
+                'Location',
+                style: AppFonts.body1.lightGrey1,
               ),
-            ],
-          ),
-        ),
-      ],
-    );
+            ),
+            TextButton(
+                onPressed: checkLocationPermission,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: _position != null
+                          ? Text(
+                              _position.toString(),
+                              style: AppFonts.body2.lightGrey1,
+                              softWrap: true,
+                            )
+                          : Text(
+                              'My Position???',
+                              style: AppFonts.body2.lightGrey1,
+                            ),
+                    ),
+                    const Icon(
+                      Icons.expand_more,
+                      color: AppColors.lightgray1,
+                    ),
+                  ],
+                ))
+          ],
+        ));
   }
 }

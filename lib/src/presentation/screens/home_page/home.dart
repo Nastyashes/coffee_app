@@ -54,7 +54,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 63, bottom: 28, left: 30, right: 30),
+                        top: 40, bottom: 10, left: 30, right: 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -122,7 +122,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     alignment: Alignment.topCenter,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 20),
+                          horizontal: 30, vertical: 15),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 24, vertical: 10),
