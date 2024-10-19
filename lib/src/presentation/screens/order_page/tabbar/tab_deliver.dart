@@ -235,7 +235,7 @@ class Deliver extends StatelessWidget {
                       child: ElevatedButton(
                         style: headButtonStyle,
                         onPressed: () {
-                          Navigator.pushNamed(context, '/delivery');
+                          Navigator.pushNamed(context, '/delivery',);
                         },
                         child: const Text('Order'),
                       ),

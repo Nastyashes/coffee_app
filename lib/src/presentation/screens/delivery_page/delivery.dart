@@ -1,15 +1,22 @@
+import 'package:coffee_app/src/presentation/screens/delivery_page/courier.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+
 
 class Delivery extends StatefulWidget {
   const Delivery({super.key});
+  
 
   @override
   State<Delivery> createState() => DeliveryState();
+
 }
 
 class DeliveryState extends State<Delivery> {
+  bool _isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,27 +36,51 @@ class DeliveryState extends State<Delivery> {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/image/maps.png'),
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter)),
+             child: FlutterMap(
+    options: MapOptions(
+      initialCenter: LatLng(51.509364, -0.128928), // Center the map over London
+      initialZoom: 9.2,
+    ),
+    children: [
+      TileLayer( // Display map tiles from any source
+        urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', // OSMF's Tile Server
+        userAgentPackageName: 'com.example.app',
+        // And many more recommended properties!
+      ),
+      RichAttributionWidget( // Include a stylish prebuilt attribution widget that meets all requirments
+        attributions: [
+          TextSourceAttribution(
+            'OpenStreetMap contributors',
+            onTap: () =>(Uri.parse('https://openstreetmap.org/copyright')), // (external)
+          ),
+          // Also add images...
+        ],
+      ),
+    ],
+  )
           ),
           Align(
               alignment: Alignment.bottomCenter,
-              child: Container(
-                height: MediaQuery.of(context).size.height / 2.2,
+              child:Column(mainAxisSize: MainAxisSize.min,
+                children: [
+               Container(
+                
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     color: AppColors.white),
                 child: Column(
                   children: [
-                    const ImageIcon(
+                     IconButton (icon: const ImageIcon(
                       AssetImage('assets/icons/indicator.png'),
                       color: AppColors.borderlight,
                       size: 44,
-                    ),
+                    ), onPressed: () {
+                      setState((){
+                        _isVisible =!_isVisible;});},),
+                        Visibility(
+           visible: _isVisible, 
+            child: Column(children: [
                     Padding(
                         padding: const EdgeInsets.only(),
                         child: Text('10 minutes left',
@@ -139,23 +170,12 @@ class DeliveryState extends State<Delivery> {
                                 child: SizedBox(
                               width: double.minPositive,
                             )),
-                            Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(14),
-                                  border:
-                                      Border.all(color: AppColors.bordergray)),
-                              child: const ImageIcon(
-                                AssetImage('assets/icons/call.png'),
-                                size: 54,
-                                color: AppColors.gray1,
-                              ),
-                            )
+                            const CourierPhoneIcon()
                           ],
                         ))
                   ],
-                ),
-              ))
+          ))],)),
+              ],))
         ],
       ),
     );

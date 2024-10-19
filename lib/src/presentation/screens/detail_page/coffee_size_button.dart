@@ -53,7 +53,7 @@ Widget build(BuildContext context) {
 
       return Expanded(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6.0), // Відступи між кнопками
+          padding: const EdgeInsets.symmetric(horizontal: 6.0), 
           child: ElevatedButton(
             onPressed: () => selectSize(size),
             style: ElevatedButton.styleFrom(
