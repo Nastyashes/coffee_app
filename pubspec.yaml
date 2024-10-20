@@ -25,10 +25,11 @@ dependencies:
   path: ^1.9.0
   responsive_framework: ^0.1.9
   geolocator: ^13.0.1
+  geocoding: ^3.0.0
   latlong2: 0.9.1
   flutter_map: ^7.0.2
   html: ^0.15.4
-
+  
 
 dev_dependencies:
   flutter_test:
@@ -37,9 +38,6 @@ dev_dependencies:
   drift_dev: ^2.18.0
   build_runner: ^2.4.9
   flutter_launcher_icons: ^0.14.1
-
-flutter_launcher_icons:
-  path: ../..
 
 flutter:
   uses-material-design: true

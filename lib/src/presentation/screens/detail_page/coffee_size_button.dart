@@ -33,46 +33,50 @@ class _CoffeeSizeButtonState extends State<CoffeeSizeButton> {
     widget.onSizeSelected(size);
   }
 
- @override
-Widget build(BuildContext context) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: CoffeeSize.values.map((size) {
-      String label;
-      switch (size) {
-        case CoffeeSize.small:
-          label = 'S';
-          break;
-        case CoffeeSize.medium:
-          label = 'M';
-          break;
-        case CoffeeSize.large:
-          label = 'L';
-          break;
-      }
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: CoffeeSize.values.map((size) {
+        String label;
+        switch (size) {
+          case CoffeeSize.small:
+            label = 'S';
+            break;
+          case CoffeeSize.medium:
+            label = 'M';
+            break;
+          case CoffeeSize.large:
+            label = 'L';
+            break;
+        }
 
-      return Expanded(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6.0), 
-          child: ElevatedButton(
-            onPressed: () => selectSize(size),
-            style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  selectedSize == size ? AppColors.perulight : AppColors.white,
-              foregroundColor:
-                  selectedSize == size ? AppColors.peru : AppColors.darkGray,
-              side: selectedSize == size
-                  ? const BorderSide(color: AppColors.peru,)
-                  : const BorderSide(color: AppColors.bordergray),
-              minimumSize: const Size.fromHeight(43),
-              shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12.0),
-            )),
-            child: Text(label),
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6.0),
+            child: ElevatedButton(
+              onPressed: () => selectSize(size),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: selectedSize == size
+                      ? AppColors.perulight
+                      : AppColors.white,
+                  foregroundColor: selectedSize == size
+                      ? AppColors.peru
+                      : AppColors.darkGray,
+                  side: selectedSize == size
+                      ? const BorderSide(
+                          color: AppColors.peru,
+                        )
+                      : const BorderSide(color: AppColors.bordergray),
+                  minimumSize: const Size.fromHeight(43),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  )),
+              child: Text(label),
+            ),
           ),
-        ),
-      );
-    }).toList(),
-  );
-}
+        );
+      }).toList(),
+    );
+  }
 }

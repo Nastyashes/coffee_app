@@ -40,12 +40,16 @@ void showCourierDialog(BuildContext context) {
                   onPressed: () {
                     Clipboard.setData(
                         const ClipboardData(text: '+380123456789'));
-                    ScaffoldMessenger.of(context).showSnackBar( SnackBar(
-                      content: Text('Copy number!', style: AppFonts.body1.black),
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content:
+                          Text('Copy number!', style: AppFonts.body1.black),
                     ));
                   },
                   label: Text('Copy number', style: AppFonts.body1.black),
-                  icon: const Icon(Icons.copy, color: AppColors.darkGray,))
+                  icon: const Icon(
+                    Icons.copy,
+                    color: AppColors.darkGray,
+                  ))
             ],
           ),
         );

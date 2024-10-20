@@ -1,7 +1,9 @@
 import 'package:coffee_app/src/entities/users/users.dart';
+import 'package:coffee_app/src/presentation/bloc/location_bloc/location_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/src/presentation/themes/colors.dart';
 import 'package:coffee_app/src/presentation/themes/fonts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddressPage extends StatefulWidget {
   final Users user;
@@ -90,9 +92,32 @@ class AddressPageState extends State<AddressPage> {
             child: Text(user.name, style: AppFonts.title4.darkGrey),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: Text(user.address, style: AppFonts.body1),
-          ),
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Flexible(
+                child: BlocBuilder<LocationBloc, LocationState>(
+                  builder: (context, state) {
+                    if (state is LocationLoading) {
+                      return const CircularProgressIndicator();
+                    } else if (state is LocationLoaded) {
+                      return Text(
+                        state.address,
+                        style: AppFonts.body1,
+                        softWrap: true,
+                      );
+                    } else if (state is LocationError) {
+                      return Text(
+                        state.message,
+                        style: AppFonts.body1,
+                      );
+                    } else {
+                      return Text(
+                        user.address,
+                        style: AppFonts.body1,
+                      );
+                    }
+                  },
+                ),
+              )),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

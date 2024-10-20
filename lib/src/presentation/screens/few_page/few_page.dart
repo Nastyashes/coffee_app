@@ -30,12 +30,12 @@ class FewState extends State<Few> {
         } else if (state is CoffeeLoaded) {
           return Scaffold(
             appBar: AppBar(
-              leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pushNamed(context, '/home');
-          },
-        ),
+                leading: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
+                ),
                 title:
                     Text('Favorite Coffees', style: AppFonts.title2.darkGrey)),
             body: ListView(

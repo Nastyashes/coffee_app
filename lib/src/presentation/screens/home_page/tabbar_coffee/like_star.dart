@@ -7,13 +7,10 @@ class LikeStarButton extends StatefulWidget {
   const LikeStarButton({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _LikeStarButtonState createState() => _LikeStarButtonState();
+  LikeStarButtonState createState() => LikeStarButtonState();
 }
 
-class LikeStarButtonState {}
-
-class _LikeStarButtonState extends State<LikeStarButton> {
+class LikeStarButtonState extends State<LikeStarButton> {
   double _rating = 0.0;
   bool isExpanded = false;
 

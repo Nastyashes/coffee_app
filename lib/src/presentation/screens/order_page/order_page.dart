@@ -26,9 +26,7 @@ class _OrderPageState extends State<OrderPage>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    context
-        .read<CoffeeBloc>()
-        .add(LoadCoffee()); 
+    context.read<CoffeeBloc>().add(LoadCoffee());
   }
 
   @override

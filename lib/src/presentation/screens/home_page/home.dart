@@ -58,7 +58,7 @@ class HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        LocationUser(),
+                        const LocationUser(),
                         Container(
                           width: 44,
                           height: 44,

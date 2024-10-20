@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CoffeeCounterBloc extends Bloc<CoffeeCounterEvent, CoffeeCounterState> {
   CoffeeCounterBloc() : super(const CoffeeCounterState(coffeeCounts: {})) {
-
     on<AddCoffeeItem>((event, emit) {
       final newState = Map<Coffee, int>.from(state.coffeeCounts);
       if (newState.containsKey(event.coffee)) {
@@ -45,15 +44,13 @@ class CoffeeCounterBloc extends Bloc<CoffeeCounterEvent, CoffeeCounterState> {
       }
     });
 
-    
-  on<UpdateCoffeeSize>((event, emit) {
-    final updatedCoffeeCounts = Map<Coffee, int>.from(state.coffeeCounts);
-    final updatedCoffee = event.coffee.copyWith(selectedSize: event.size);
-    updatedCoffeeCounts[updatedCoffee] = updatedCoffeeCounts.remove(event.coffee) ?? 0;
+    on<UpdateCoffeeSize>((event, emit) {
+      final updatedCoffeeCounts = Map<Coffee, int>.from(state.coffeeCounts);
+      final updatedCoffee = event.coffee.copyWith(selectedSize: event.size);
+      updatedCoffeeCounts[updatedCoffee] =
+          updatedCoffeeCounts.remove(event.coffee) ?? 0;
 
-    emit(state.copyWith(coffeeCounts: updatedCoffeeCounts));
-  });
-}
-
+      emit(state.copyWith(coffeeCounts: updatedCoffeeCounts));
+    });
   }
-
+}

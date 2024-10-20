@@ -34,6 +34,7 @@ class AddCoffeeItem extends CoffeeCounterEvent {
   @override
   List<Object> get props => [coffee];
 }
+
 class RemoveCoffeeItem extends CoffeeCounterEvent {
   final Coffee coffee;
 
